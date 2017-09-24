@@ -1,0 +1,18 @@
+{
+    "projectName": "task1",
+    "username": "test-d_masalsky@twistellar.com",
+    "id": "4b051860-9c3e-11e7-bdb9-377a4331cb5c",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://masalsky-dev-ed.my.salesforce.com",
+    "workspace": "C:\\Users\\Дмитрий\\Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "AuraDefinitionBundle",
+        "StaticResource"
+    ]
+}

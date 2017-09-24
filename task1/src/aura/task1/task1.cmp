@@ -1,0 +1,106 @@
+<aura:component controller="accountsWithContactsClass" implements="flexipage:availableForRecordHome,force:hasRecordId"  access="global">
+
+    <ltng:require scripts="/resource/jquery224" />
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <aura:attribute name="selectedAccount" type="String" />
+    <aura:attribute name="lookupId" type="Id" />
+    <aura:attribute name="contacts" type="Contact[]" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="flag" type="Boolean" default="false"/>
+    <aura:attribute name="newContact" type="Contact" />
+    <aura:attribute name="selectedLookUpRecord" type="sObject" default="{}"/>
+    <aura:attribute name="accountList" type="List" default="[]" />
+
+   <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+   <thead>
+         <tr class="slds-text-title_caps">
+              	<th scope="col">
+                  <div class="slds-truncate" title="FirstName">First Name</div>
+      			</th>
+             	<th scope="col">
+                  <div class="slds-truncate" title="Last Name">Last Name</div>
+      			</th>
+              	<th scope="col">
+                  <div class="slds-truncate" title="Phone">Phone</div>
+      			</th>
+              	<th scope="col">
+                  <div class="slds-truncate" title="Email">Email</div>
+      			</th>
+              	<th scope="col">
+                  <div class="slds-truncate" title="BirthDate">BirthDate</div>
+      			</th>
+            	<th scope="col">
+                  <div class="slds-truncate" title="AccountId">Account</div>
+      			</th>
+        </tr>
+    </thead>
+       <tbody>
+        <aura:if isTrue="{!v.flag}">
+         <aura:iteration items="{!v.contacts}" var="contact">
+            <tr>    
+                <td><lightning:input value="{!contact.FirstName}" aura:id="contactform" required="true"/></td>
+                <td><lightning:input value="{!contact.LastName}" aura:id="contactform" required="true"/></td>
+       			<td><lightning:input value="{!contact.Phone}" aura:id="contactform"/></td>
+        		<td><lightning:input value="{!contact.Email}" type="Email" aura:id="contactform"/></td>
+        		<td><lightning:input value="{!contact.Birthdate}" type="Date" aura:id="contactform"/></td>
+        		<td>
+                            <div class="lookupInput">
+                                <label style="display:block;"> Account Name 
+                                    <input  style="display:block;" id="{!contact.Id}" type="text" class="slds-input accountInputClass" 
+                                         placeholder="{!contact.Account.Name}"  onclick="{!c.onfocus}" onkeyup="{!c.keyPressController}"/>
+                                </label>
+                            </div>
+                            <div role="listbox" class="account-name slds-hide">
+                                <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                                    <aura:iteration var="account" items="{!v.accountList}">
+                                        <li role="presentation" class="slds-listbox__item">
+                                            <span id="listbox-option-unique-id-01" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                                <span class="slds-media__body">
+                                                    <span class="slds-listbox__option-text slds-listbox__option-text_entity" onclick="{!c.populateValue}">{!account.Name}</span>
+                                                </span>
+                                            </span>
+                                        </li>
+                                    </aura:iteration>
+                                </ul>
+                            </div>
+                  </td>   
+             </tr> 
+         </aura:iteration>  
+   		<aura:set attribute="else">
+        <aura:iteration items="{!v.contacts}" var="contact">
+            <tr>   
+                 <td>{!contact.FirstName}</td>
+                 <td>{!contact.LastName}</td>
+                 <td>{!contact.Phone}</td>
+                 <td>{!contact.Email}</td>
+                 <td>{!contact.Birthdate}</td>  
+                 <td><ui:outputUrl value="{!'/' + contact.AccountId}" label="{!contact.Account.Name}"/></td>  
+           </tr> 
+         </aura:iteration>  
+        </aura:set>
+    </aura:if>
+        </tbody>
+    </table> 
+    
+    <aura:if isTrue="{!v.flag}">
+         <div class="c-container">
+            <lightning:layout horizontalAlign="center">
+    		<lightning:layoutItem padding="around-small" >
+          		<lightning:button variant="brand" label="Save" onclick="{! c.clickSave }" />
+       		</lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" >
+              <lightning:button variant="brand" label="Cancel" onclick="{! c.clickCancel }" />
+            </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+   		<aura:set attribute="else">
+          <div class="c-container">
+            <lightning:layout horizontalAlign="center">
+    		<lightning:layoutItem padding="around-small">
+          		<lightning:button variant="brand" label="Edit" onclick="{! c.clickEdit }" />
+       		</lightning:layoutItem>
+    		</lightning:layout>
+          </div>
+        </aura:set>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,113 @@
+40.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+00:44:22.0 (56748)|USER_INFO|[EXTERNAL]|0057F000000SZkg|test-d_masalsky@twistellar.com|Pacific Standard Time|GMT-07:00
+00:44:22.0 (88036)|EXECUTION_STARTED
+00:44:22.0 (91949)|CODE_UNIT_STARTED|[EXTERNAL]|Aura
+00:44:22.0 (7655523)|CODE_UNIT_STARTED|[EXTERNAL]|01p7F000008cBuq|accountsWithContactsClass.saveContact
+00:44:22.0 (7822638)|HEAP_ALLOCATE|[72]|Bytes:3
+00:44:22.0 (7863743)|HEAP_ALLOCATE|[77]|Bytes:152
+00:44:22.0 (7878836)|HEAP_ALLOCATE|[342]|Bytes:408
+00:44:22.0 (7893959)|HEAP_ALLOCATE|[355]|Bytes:408
+00:44:22.0 (7911978)|HEAP_ALLOCATE|[467]|Bytes:48
+00:44:22.0 (7938484)|HEAP_ALLOCATE|[139]|Bytes:6
+00:44:22.0 (8001011)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:10
+00:44:22.0 (8013751)|METHOD_ENTRY|[1]|01p7F000008cBuq|accountsWithContactsClass.accountsWithContactsClass()
+00:44:22.0 (8019201)|STATEMENT_EXECUTE|[1]
+00:44:22.0 (8023825)|STATEMENT_EXECUTE|[1]
+00:44:22.0 (8027673)|METHOD_EXIT|[1]|accountsWithContactsClass
+00:44:22.0 (8071584)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:16
+00:44:22.0 (8081668)|SYSTEM_MODE_ENTER|false
+00:44:22.0 (8089491)|VARIABLE_SCOPE_BEGIN|[14]|contacts|List<Contact>|true|false
+00:44:22.0 (8179402)|VARIABLE_ASSIGNMENT|[14]|contacts|[{"Account":{"Id":"0017F00000DPb5tQAD","Name":"Express Logistics an (11 more) ..."},"Email":"ros@edge.com","AccountId":"0017F00000DPb5tQAD","FirstName":"Ros","Phone":"(412) 757-6000","LastName":"Gonzalez","Id":"0037F000007hqfjQAA","Birthdate":"1965-08-27T00:00:00.000Z"},{"Account":{"Id":"0017F00000DPb5tQAD","Name":"Express Logistics an (11 more) ..."},"Email":"sean@edge.com","AccountId":"0017F00000DPb5tQAD","FirstName":"Sean","Phone":"(512) 757-6000","LastName":"Forbes","Id":"0037F000007hqfkQAA","Birthdate":"1944-05-22T00:00:00.000Z"},{"Account":{"Id":"0017F00000DPb5tQAD","Name":"Express Logistics an (11 more) ..."},"Email":"dik@mail.ru","AccountId":"0017F00000DPb5tQAD","FirstName":"Dik","Phone":"(512) 757-7000","LastName":"Advokat","Id":"0037F000007pKrrQAE"}]|0x622af8af
+00:44:22.0 (8210811)|STATEMENT_EXECUTE|[14]
+00:44:22.0 (8212522)|STATEMENT_EXECUTE|[15]
+00:44:22.0 (8246180)|HEAP_ALLOCATE|[50]|Bytes:5
+00:44:22.0 (8270506)|HEAP_ALLOCATE|[56]|Bytes:5
+00:44:22.0 (8278076)|HEAP_ALLOCATE|[64]|Bytes:7
+00:44:22.0 (8331524)|DML_BEGIN|[15]|Op:Update|Type:SObject|Rows:3
+00:44:22.0 (8358994)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:16
+00:44:22.0 (21340570)|CODE_UNIT_STARTED|[EXTERNAL]|DuplicateDetector
+00:44:22.0 (21353805)|DUPLICATE_DETECTION_BEGIN
+00:44:22.0 (21421077)|DUPLICATE_DETECTION_RULE_INVOCATION|DuplicateRuleId:0Bm7F000003oqL8|DuplicateRuleName:Standard Contact Duplicate Rule|DmlType:UPDATE
+00:44:22.0 (21456325)|DUPLICATE_DETECTION_END
+00:44:22.0 (21461355)|CODE_UNIT_FINISHED|DuplicateDetector
+00:44:22.0 (38116489)|DML_END|[15]
+00:44:22.0 (38192615)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:16
+00:44:22.0 (38214606)|STATEMENT_EXECUTE|[16]
+00:44:22.0 (38225871)|SYSTEM_MODE_EXIT|false
+00:44:22.0 (41120454)|CODE_UNIT_STARTED|[EXTERNAL]|DuplicateDetector
+00:44:22.0 (41132699)|DUPLICATE_DETECTION_BEGIN
+00:44:22.0 (41189257)|DUPLICATE_DETECTION_RULE_INVOCATION|DuplicateRuleId:0Bm7F000003oqL8|DuplicateRuleName:Standard Contact Duplicate Rule|DmlType:UPDATE
+00:44:22.0 (53636830)|DUPLICATE_DETECTION_END
+00:44:22.0 (53649557)|CODE_UNIT_FINISHED|DuplicateDetector
+00:44:22.53 (53687036)|CUMULATIVE_LIMIT_USAGE
+00:44:22.53 (53687036)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 3 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+00:44:22.53 (53687036)|CUMULATIVE_LIMIT_USAGE_END
+
+00:44:22.0 (53721251)|CODE_UNIT_FINISHED|accountsWithContactsClass.saveContact
+00:44:22.0 (53832620)|CODE_UNIT_FINISHED|Aura
+00:44:22.0 (54560437)|EXECUTION_FINISHED
+00:44:22.55 (55967096)|USER_INFO|[EXTERNAL]|0057F000000SZkg|test-d_masalsky@twistellar.com|Pacific Standard Time|GMT-07:00
+00:44:22.55 (55982512)|EXECUTION_STARTED
+00:44:22.55 (55985300)|CODE_UNIT_STARTED|[EXTERNAL]|Aura
+00:44:22.55 (56166039)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:18
+00:44:22.55 (56182137)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+00:44:22.55 (56956121)|CODE_UNIT_STARTED|[EXTERNAL]|01p7F000008cBuq|accountsWithContactsClass.updateRecord
+00:44:22.55 (56991735)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+00:44:22.55 (57003385)|SYSTEM_MODE_ENTER|false
+00:44:22.55 (57014478)|VARIABLE_SCOPE_BEGIN|[32]|lookupId|Id|false|false
+00:44:22.55 (57031795)|VARIABLE_ASSIGNMENT|[32]|lookupId|null
+00:44:22.55 (57037166)|VARIABLE_SCOPE_BEGIN|[32]|selectedAccount|String|false|false
+00:44:22.55 (57042889)|VARIABLE_ASSIGNMENT|[32]|selectedAccount|null
+00:44:22.55 (57046100)|VARIABLE_SCOPE_BEGIN|[32]|accountId|Id|false|false
+00:44:22.55 (57141494)|VARIABLE_ASSIGNMENT|[32]|accountId|"0017F00000DPb5tQAD"
+00:44:22.55 (57157774)|STATEMENT_EXECUTE|[32]
+00:44:22.55 (57159499)|STATEMENT_EXECUTE|[33]
+00:44:22.55 (57163860)|HEAP_ALLOCATE|[33]|Bytes:109
+00:44:22.55 (57181084)|HEAP_ALLOCATE|[33]|Bytes:4
+00:44:22.55 (57196170)|HEAP_ALLOCATE|[33]|Bytes:7
+00:44:22.55 (57463098)|SOQL_EXECUTE_BEGIN|[33]|Aggregations:0|SELECT FirstName, LastName, Phone, Email, Birthdate, AccountId, Account.Name FROM Contact WHERE Id = :tmpVar1
+00:44:22.55 (58938119)|SOQL_EXECUTE_END|[33]|Rows:0
+00:44:22.55 (58958888)|HEAP_ALLOCATE|[33]|Bytes:4
+00:44:22.55 (58970647)|HEAP_ALLOCATE|[33]|Bytes:0
+00:44:22.55 (59030210)|HEAP_ALLOCATE|[33]|Bytes:4
+00:44:22.55 (59042210)|HEAP_ALLOCATE|[33]|Bytes:33
+00:44:22.55 (59140394)|HEAP_ALLOCATE|[33]|Bytes:46
+00:44:22.55 (59217453)|FATAL_ERROR|System.QueryException: List has no rows for assignment to SObject
+
+Class.accountsWithContactsClass.updateRecord: line 33, column 1
+00:44:22.55 (59228579)|FATAL_ERROR|System.QueryException: List has no rows for assignment to SObject
+
+Class.accountsWithContactsClass.updateRecord: line 33, column 1
+00:44:22.59 (59234074)|CUMULATIVE_LIMIT_USAGE
+00:44:22.59 (59234074)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 3 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+00:44:22.59 (59234074)|CUMULATIVE_LIMIT_USAGE_END
+
+00:44:22.55 (59259864)|CODE_UNIT_FINISHED|accountsWithContactsClass.updateRecord
+00:44:22.55 (62510436)|CODE_UNIT_FINISHED|Aura
+00:44:22.55 (63237320)|EXECUTION_FINISHED

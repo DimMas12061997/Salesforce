@@ -1,0 +1,59 @@
+40.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+00:48:01.0 (59347)|USER_INFO|[EXTERNAL]|0057F000000SZkg|test-d_masalsky@twistellar.com|Pacific Standard Time|GMT-07:00
+00:48:01.0 (97036)|EXECUTION_STARTED
+00:48:01.0 (101157)|CODE_UNIT_STARTED|[EXTERNAL]|Aura
+00:48:01.0 (6466629)|HEAP_ALLOCATE|[72]|Bytes:3
+00:48:01.0 (6509852)|HEAP_ALLOCATE|[77]|Bytes:152
+00:48:01.0 (6524856)|HEAP_ALLOCATE|[342]|Bytes:408
+00:48:01.0 (6540109)|HEAP_ALLOCATE|[355]|Bytes:408
+00:48:01.0 (6553602)|HEAP_ALLOCATE|[467]|Bytes:48
+00:48:01.0 (6590924)|HEAP_ALLOCATE|[139]|Bytes:6
+00:48:01.0 (6605393)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:18
+00:48:01.0 (6614202)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+00:48:01.0 (7331873)|CODE_UNIT_STARTED|[EXTERNAL]|01p7F000008cBuq|accountsWithContactsClass.getAllContacts
+00:48:01.0 (7447732)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:10
+00:48:01.0 (7461866)|METHOD_ENTRY|[1]|01p7F000008cBuq|accountsWithContactsClass.accountsWithContactsClass()
+00:48:01.0 (7467167)|STATEMENT_EXECUTE|[1]
+00:48:01.0 (7472020)|STATEMENT_EXECUTE|[1]
+00:48:01.0 (7476101)|METHOD_EXIT|[1]|accountsWithContactsClass
+00:48:01.0 (7480724)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+00:48:01.0 (7491854)|SYSTEM_MODE_ENTER|false
+00:48:01.0 (7498036)|VARIABLE_SCOPE_BEGIN|[4]|accountId|Id|false|false
+00:48:01.0 (7620183)|VARIABLE_ASSIGNMENT|[4]|accountId|"0017F00000DPb5tQAD"
+00:48:01.0 (7635014)|STATEMENT_EXECUTE|[4]
+00:48:01.0 (7636196)|STATEMENT_EXECUTE|[5]
+00:48:01.0 (7639328)|HEAP_ALLOCATE|[5]|Bytes:116
+00:48:01.0 (7652297)|HEAP_ALLOCATE|[5]|Bytes:4
+00:48:01.0 (7664521)|HEAP_ALLOCATE|[5]|Bytes:7
+00:48:01.0 (7717496)|HEAP_ALLOCATE|[50]|Bytes:5
+00:48:01.0 (7741961)|HEAP_ALLOCATE|[56]|Bytes:5
+00:48:01.0 (7748896)|HEAP_ALLOCATE|[64]|Bytes:7
+00:48:01.0 (8438445)|SOQL_EXECUTE_BEGIN|[5]|Aggregations:0|SELECT FirstName, LastName, Phone, Email, Birthdate, AccountId, Account.Name FROM Contact WHERE AccountId = :tmpVar1
+00:48:01.0 (13749240)|SOQL_EXECUTE_END|[5]|Rows:3
+00:48:01.0 (13773747)|HEAP_ALLOCATE|[5]|Bytes:16
+00:48:01.0 (13806783)|HEAP_ALLOCATE|[5]|Bytes:552
+00:48:01.0 (13900624)|HEAP_ALLOCATE|[5]|Bytes:16
+00:48:01.0 (13915636)|VARIABLE_SCOPE_BEGIN|[5]|contacts|List<Contact>|true|false
+00:48:01.0 (13980777)|VARIABLE_ASSIGNMENT|[5]|contacts|[{"FirstName":"Ros","LastName":"Gonzalez","Phone":"(412) 757-6000","Email":"ros@edge.com","Birthdate":"1965-08-27T00:00:00.000Z","AccountId":"0017F00000DPb5tQAD","Id":"0037F000007hqfjQAA","Account":{"Name":"Express Logistics an (11 more) ...","Id":"0017F00000DPb5tQAD"}},{"FirstName":"Sean","LastName":"Forbes","Phone":"(512) 757-6000","Email":"sean@edge.com","Birthdate":"1944-05-22T00:00:00.000Z","AccountId":"0017F00000DPb5tQAD","Id":"0037F000007hqfkQAA","Account":{"Name":"Express Logistics an (11 more) ...","Id":"0017F00000DPb5tQAD"}},{"FirstName":"Dik","LastName":"Advokat","Phone":"(512) 757-7000","Email":"dik@mail.ru","AccountId":"0017F00000DPb5tQAD","Id":"0037F000007pKrrQAE","Account":{"Name":"Express Logistics an (11 more) ...","Id":"0017F00000DPb5tQAD"}}]|0x3a2460d6
+00:48:01.0 (14003924)|STATEMENT_EXECUTE|[10]
+00:48:01.0 (14013362)|SYSTEM_MODE_EXIT|false
+00:48:01.14 (14036599)|CUMULATIVE_LIMIT_USAGE
+00:48:01.14 (14036599)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 3 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+00:48:01.14 (14036599)|CUMULATIVE_LIMIT_USAGE_END
+
+00:48:01.0 (14068478)|CODE_UNIT_FINISHED|accountsWithContactsClass.getAllContacts
+00:48:01.0 (14158912)|CODE_UNIT_FINISHED|Aura
+00:48:01.0 (15202093)|EXECUTION_FINISHED
