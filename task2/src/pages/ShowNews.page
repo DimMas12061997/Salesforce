@@ -1,0 +1,23 @@
+<apex:page controller="JsonController">
+    <apex:form >
+        <apex:pageBlock title="Деньги и власть">
+            <apex:pageBlockTable value="{! BlogEntriesToShow }" var="en">
+                <apex:column headerValue="" value="{! en.published__c }"/>
+                <apex:column headerValue="">
+                    <br/> <apex:outputLink value="{! en.link__c}">
+                    {! en.title__c}
+                    </apex:outputLink> <br/>
+                </apex:column>
+                <apex:column headerValue="">
+                    <apex:outputText value="{! en.description__c}" escape="false"></apex:outputText>  
+                </apex:column>
+            </apex:pageBlockTable>   
+            <apex:pageBlockButtons >              
+                <apex:commandButton value="<<" action="{! beginning}" disabled="{! DisablePrevious}"/>
+                <apex:commandButton value="<" action="{! previous}" disabled="{! DisablePrevious}"/>
+                <apex:commandButton value=">" action="{! next}" disabled="{! DisableNext}"/>
+                <apex:commandButton value=">>" action="{! last}" disabled="{! DisableNext}"/>           
+            </apex:pageBlockButtons>           
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

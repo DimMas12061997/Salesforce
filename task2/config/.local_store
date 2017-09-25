@@ -1,0 +1,58 @@
+{
+    "ShowNews.page": {
+        "createdById": "0057F000000SZkgQAG",
+        "createdByName": "Dmitry Masalsky",
+        "createdDate": "2017-09-21T12:53:28.000Z",
+        "fileName": "unpackaged/pages/ShowNews.page",
+        "fullName": "ShowNews",
+        "id": "0667F000003H5tOQAS",
+        "lastModifiedById": "0057F000000SZkgQAG",
+        "lastModifiedByName": "Dmitry Masalsky",
+        "lastModifiedDate": "2017-09-22T10:11:34.000Z",
+        "manageableState": "unmanaged",
+        "type": "ApexPage",
+        "mmState": "clean"
+    },
+    "checkDiscountsStatusScheduler.cls": {
+        "createdById": "0057F000000SZkgQAG",
+        "createdByName": "Dmitry Masalsky",
+        "createdDate": "2017-09-19T07:05:00.000Z",
+        "fileName": "unpackaged/classes/checkDiscountsStatusScheduler.cls",
+        "fullName": "checkDiscountsStatusScheduler",
+        "id": "01p7F000008eP5oQAE",
+        "lastModifiedById": "0057F000000SZkgQAG",
+        "lastModifiedByName": "Dmitry Masalsky",
+        "lastModifiedDate": "2017-09-19T11:23:19.000Z",
+        "manageableState": "unmanaged",
+        "type": "ApexClass",
+        "mmState": "clean"
+    },
+    "TutByNewsController.cls": {
+        "createdById": "0057F000000SZkgQAG",
+        "createdByName": "Dmitry Masalsky",
+        "createdDate": "2017-09-21T12:54:46.000Z",
+        "fileName": "unpackaged/classes/TutByNewsController.cls",
+        "fullName": "TutByNewsController",
+        "id": "01p7F000009LQXkQAO",
+        "lastModifiedById": "0057F000000SZkgQAG",
+        "lastModifiedByName": "Dmitry Masalsky",
+        "lastModifiedDate": "2017-09-22T10:13:03.000Z",
+        "manageableState": "unmanaged",
+        "type": "ApexClass",
+        "mmState": "clean"
+    },
+    "JsonController.cls": {
+        "createdById": "0057F000000SZkgQAG",
+        "createdByName": "Dmitry Masalsky",
+        "createdDate": "2017-09-22T07:49:34.000Z",
+        "fileName": "unpackaged/classes/JsonController.cls",
+        "fullName": "JsonController",
+        "id": "01p7F000009LmcmQAC",
+        "lastModifiedById": "0057F000000SZkgQAG",
+        "lastModifiedByName": "Dmitry Masalsky",
+        "lastModifiedDate": "2017-09-22T10:12:18.000Z",
+        "manageableState": "unmanaged",
+        "type": "ApexClass",
+        "mmState": "clean"
+    }
+}

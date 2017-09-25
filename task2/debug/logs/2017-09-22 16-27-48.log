@@ -1,0 +1,118 @@
+40.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: for (CronTrigger ct : [SELECT Id FROM CronTrigger]) {
+Execute Anonymous:    System.abortJob(ct.Id);
+Execute Anonymous: }
+Execute Anonymous: 
+Execute Anonymous: WundergroundAPI.callout('path');
+Execute Anonymous: //TutByNewsController.deleteEntries();
+Execute Anonymous: /*checkDiscountsStatusScheduler m = new checkDiscountsStatusScheduler();
+Execute Anonymous: String sch = '0 14 * * * ?';
+Execute Anonymous: String jobId = system.schedule('13setDiscountsStatusScheduler', sch, m);
+Execute Anonymous: */
+06:27:44.1 (1095876)|USER_INFO|[EXTERNAL]|0057F000000SZkg|test-d_masalsky@twistellar.com|Pacific Standard Time|GMT-07:00
+06:27:44.1 (1125794)|EXECUTION_STARTED
+06:27:44.1 (1132194)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+06:27:44.1 (1391411)|HEAP_ALLOCATE|[72]|Bytes:3
+06:27:44.1 (1439750)|HEAP_ALLOCATE|[77]|Bytes:152
+06:27:44.1 (1463093)|HEAP_ALLOCATE|[342]|Bytes:408
+06:27:44.1 (1489446)|HEAP_ALLOCATE|[355]|Bytes:408
+06:27:44.1 (1512520)|HEAP_ALLOCATE|[467]|Bytes:48
+06:27:44.1 (1548798)|HEAP_ALLOCATE|[139]|Bytes:6
+06:27:44.1 (1583776)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:5
+06:27:44.1 (1756321)|STATEMENT_EXECUTE|[1]
+06:27:44.1 (1763258)|HEAP_ALLOCATE|[1]|Bytes:26
+06:27:44.1 (1778902)|HEAP_ALLOCATE|[1]|Bytes:4
+06:27:44.1 (1828186)|HEAP_ALLOCATE|[50]|Bytes:5
+06:27:44.1 (1872670)|HEAP_ALLOCATE|[56]|Bytes:5
+06:27:44.1 (1883869)|HEAP_ALLOCATE|[64]|Bytes:7
+06:27:44.1 (2086093)|SOQL_EXECUTE_BEGIN|[1]|Aggregations:0|SELECT Id FROM CronTrigger
+06:27:44.1 (10659839)|SOQL_EXECUTE_END|[1]|Rows:1
+06:27:44.1 (10688777)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+06:27:44.1 (10996746)|HEAP_ALLOCATE|[1]|Bytes:49
+06:27:44.1 (11007781)|HEAP_ALLOCATE|[1]|Bytes:8
+06:27:44.1 (11023390)|SYSTEM_METHOD_ENTRY|[7]|QueryLocatorIterator.QueryLocatorIterator()
+06:27:44.1 (11028012)|STATEMENT_EXECUTE|[7]
+06:27:44.1 (11036692)|SYSTEM_METHOD_EXIT|[7]|QueryLocatorIterator
+06:27:44.1 (11044480)|HEAP_ALLOCATE|[1]|Bytes:28
+06:27:44.1 (11109485)|HEAP_ALLOCATE|[1]|Bytes:8
+06:27:44.1 (11124671)|HEAP_ALLOCATE|[1]|Bytes:8
+06:27:44.1 (11127624)|HEAP_ALLOCATE|[1]|Bytes:8
+06:27:44.1 (11133309)|VARIABLE_SCOPE_BEGIN|[15]|this|Database.QueryLocatorIterator|true|false
+06:27:44.1 (11178472)|VARIABLE_ASSIGNMENT|[15]|this|{}|0x7005bd57
+06:27:44.1 (11196402)|VARIABLE_SCOPE_BEGIN|[15]|values|List<SObject>|true|false
+06:27:44.1 (11227930)|VARIABLE_ASSIGNMENT|[15]|values|[{"Id":"08e7F000005BCevQAG"}]|0x1e34ce60
+06:27:44.1 (11237052)|VARIABLE_SCOPE_BEGIN|[15]|ql|Database.QueryLocator|true|false
+06:27:44.1 (11257842)|VARIABLE_ASSIGNMENT|[15]|ql|{"query":"SELECT Id FROM CronT (6 more) ..."}|0x2b3b9f70
+06:27:44.1 (11263234)|VARIABLE_SCOPE_BEGIN|[15]|totalNumRecords|Integer|false|false
+06:27:44.1 (11270355)|VARIABLE_ASSIGNMENT|[15]|totalNumRecords|1
+06:27:44.1 (11274083)|VARIABLE_SCOPE_BEGIN|[15]|queryMoreSize|Integer|false|false
+06:27:44.1 (11279727)|VARIABLE_ASSIGNMENT|[15]|queryMoreSize|49999
+06:27:44.1 (11372807)|HEAP_ALLOCATE|[1]|Bytes:28
+06:27:44.1 (11402707)|METHOD_ENTRY|[1]||Database.QueryLocatorIterator.hasNext()
+06:27:44.1 (11518501)|METHOD_EXIT|[1]||Database.QueryLocatorIterator.hasNext()
+06:27:44.1 (11528024)|METHOD_ENTRY|[1]||Database.QueryLocatorIterator.next()
+06:27:44.1 (11662748)|METHOD_EXIT|[1]||Database.QueryLocatorIterator.next()
+06:27:44.1 (11675637)|VARIABLE_SCOPE_BEGIN|[1]|ct|CronTrigger|true|false
+06:27:44.1 (11695214)|VARIABLE_ASSIGNMENT|[1]|ct|{"Id":"08e7F000005BCevQAG"}|0x36cca2bd
+06:27:44.1 (11704858)|STATEMENT_EXECUTE|[1]
+06:27:44.1 (11706865)|STATEMENT_EXECUTE|[2]
+06:27:44.1 (11759683)|HEAP_ALLOCATE|[2]|Bytes:18
+06:27:44.1 (37074913)|METHOD_ENTRY|[1]||Database.QueryLocatorIterator.hasNext()
+06:27:44.1 (37103436)|METHOD_EXIT|[1]||Database.QueryLocatorIterator.hasNext()
+06:27:44.1 (37115941)|VARIABLE_ASSIGNMENT|[1]|ct|null|
+06:27:44.1 (37135529)|STATEMENT_EXECUTE|[5]
+06:27:44.1 (37141284)|HEAP_ALLOCATE|[5]|Bytes:4
+06:27:44.1 (37187709)|SYSTEM_MODE_ENTER|false
+06:27:44.1 (37208517)|HEAP_ALLOCATE|[5]|Bytes:5
+06:27:44.1 (38125278)|HEAP_ALLOCATE|[5]|Bytes:3
+06:27:44.1 (38134613)|HEAP_ALLOCATE|[5]|Bytes:2
+06:27:44.1 (38152983)|METHOD_ENTRY|[1]|01p7F000009LsAo|WundergroundAPI.WundergroundAPI()
+06:27:44.1 (38159160)|STATEMENT_EXECUTE|[1]
+06:27:44.1 (38163203)|STATEMENT_EXECUTE|[1]
+06:27:44.1 (38168331)|METHOD_EXIT|[1]|WundergroundAPI
+06:27:44.1 (38191941)|METHOD_ENTRY|[5]|01p7F000009LsAo|WundergroundAPI.callout(String)
+06:27:44.1 (38210144)|VARIABLE_SCOPE_BEGIN|[5]|path|String|false|false
+06:27:44.1 (38221370)|VARIABLE_ASSIGNMENT|[5]|path|"path"
+06:27:44.1 (38227021)|STATEMENT_EXECUTE|[5]
+06:27:44.1 (38227986)|STATEMENT_EXECUTE|[6]
+06:27:44.1 (38252598)|VARIABLE_SCOPE_BEGIN|[6]|req|System.HttpRequest|true|false
+06:27:44.1 (38355131)|VARIABLE_ASSIGNMENT|[6]|req|"System.HttpRequest[Endpoint=null, Method=null]"|0x7fd3e750
+06:27:44.1 (38365307)|STATEMENT_EXECUTE|[7]
+06:27:44.1 (38368636)|HEAP_ALLOCATE|[7]|Bytes:64
+06:27:44.1 (38433713)|STATEMENT_EXECUTE|[8]
+06:27:44.1 (38437002)|HEAP_ALLOCATE|[8]|Bytes:3
+06:27:44.1 (38457152)|STATEMENT_EXECUTE|[9]
+06:27:44.1 (38468646)|VARIABLE_SCOPE_BEGIN|[9]|http|System.Http|true|false
+06:27:44.1 (38523143)|VARIABLE_ASSIGNMENT|[9]|http|"System.Http[]"|0x3afd8e48
+06:27:44.1 (38529303)|STATEMENT_EXECUTE|[10]
+06:27:44.1 (38541606)|VARIABLE_SCOPE_BEGIN|[10]|res|System.HttpResponse|true|false
+06:27:44.1 (38586845)|VARIABLE_ASSIGNMENT|[10]|res|"System.HttpResponse[Status=null, StatusCode=0]"|0x48a98699
+06:27:44.1 (38593178)|STATEMENT_EXECUTE|[11]
+06:27:44.1 (38670957)|EXCEPTION_THROWN|[11]|System.CalloutException: You have uncommitted work pending. Please commit or rollback before calling out
+06:27:44.1 (38755794)|HEAP_ALLOCATE|[11]|Bytes:83
+06:27:44.1 (38776128)|METHOD_EXIT|[5]|01p7F000009LsAo|WundergroundAPI.callout(String)
+06:27:44.1 (38786810)|SYSTEM_MODE_EXIT|false
+06:27:44.1 (38881592)|FATAL_ERROR|System.CalloutException: You have uncommitted work pending. Please commit or rollback before calling out
+
+Class.WundergroundAPI.callout: line 11, column 1
+AnonymousBlock: line 5, column 1
+AnonymousBlock: line 5, column 1
+06:27:44.38 (38922983)|CUMULATIVE_LIMIT_USAGE
+06:27:44.38 (38922983)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+06:27:44.38 (38922983)|CUMULATIVE_LIMIT_USAGE_END
+
+06:27:44.1 (38966902)|CODE_UNIT_FINISHED|execute_anonymous_apex
+06:27:44.1 (39683313)|EXECUTION_FINISHED

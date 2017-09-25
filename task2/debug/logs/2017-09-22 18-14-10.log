@@ -1,0 +1,356 @@
+40.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+08:14:07.0 (360865)|USER_INFO|[EXTERNAL]|0057F000000SZkg|test-d_masalsky@twistellar.com|Pacific Standard Time|GMT-07:00
+08:14:07.0 (411971)|EXECUTION_STARTED
+08:14:07.0 (416238)|CODE_UNIT_STARTED|[EXTERNAL]|01p7F000008eSte|RSS
+08:14:07.0 (2080316)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+08:14:07.0 (7084798)|HEAP_ALLOCATE|[72]|Bytes:3
+08:14:07.0 (7124388)|HEAP_ALLOCATE|[77]|Bytes:152
+08:14:07.0 (7140138)|HEAP_ALLOCATE|[342]|Bytes:408
+08:14:07.0 (7155616)|HEAP_ALLOCATE|[355]|Bytes:408
+08:14:07.0 (7168878)|HEAP_ALLOCATE|[467]|Bytes:48
+08:14:07.0 (7198229)|HEAP_ALLOCATE|[139]|Bytes:6
+08:14:07.0 (7238915)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:11
+08:14:07.0 (7254331)|SYSTEM_METHOD_ENTRY|[15]|BatchableContextImpl.BatchableContextImpl()
+08:14:07.0 (7258663)|STATEMENT_EXECUTE|[15]
+08:14:07.0 (7267707)|SYSTEM_METHOD_EXIT|[15]|BatchableContextImpl
+08:14:07.0 (7274632)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:12
+08:14:07.0 (7278755)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+08:14:07.0 (7284653)|VARIABLE_SCOPE_BEGIN|[31]|this|Database.BatchableContextImpl|true|false
+08:14:07.0 (7337506)|VARIABLE_ASSIGNMENT|[31]|this|{}|0x186cfa27
+08:14:07.0 (7343722)|VARIABLE_SCOPE_BEGIN|[31]|jobId|Id|false|false
+08:14:07.0 (7422521)|VARIABLE_ASSIGNMENT|[31]|jobId|"7077F00000oi6j1QAA"
+08:14:07.0 (7428444)|VARIABLE_SCOPE_BEGIN|[31]|childJobId|Id|false|false
+08:14:07.0 (7436129)|VARIABLE_ASSIGNMENT|[31]|childJobId|null
+08:14:07.0 (8000638)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:82
+08:14:07.0 (8011787)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:22
+08:14:07.0 (8015617)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:7
+08:14:07.0 (8025886)|METHOD_ENTRY|[1]|01p7F000008eSte|RSS.RSS()
+08:14:07.0 (8030902)|STATEMENT_EXECUTE|[1]
+08:14:07.0 (8034994)|STATEMENT_EXECUTE|[1]
+08:14:07.0 (8039519)|METHOD_EXIT|[1]|RSS
+08:14:07.0 (8045052)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+08:14:07.0 (8048024)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:12
+08:14:07.0 (8064643)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:404
+08:14:07.0 (8070478)|VARIABLE_SCOPE_BEGIN|[8]|this|RSS|true|false
+08:14:07.0 (8091523)|VARIABLE_ASSIGNMENT|[8]|this|{}|0x534cf5fd
+08:14:07.0 (8097461)|VARIABLE_SCOPE_BEGIN|[8]|BC|Database.BatchableContext|true|false
+08:14:07.0 (8163097)|VARIABLE_ASSIGNMENT|[8]|BC|{"jobId":"7077F00000oi6j1QAA"}|0x186cfa27
+08:14:07.0 (8171385)|VARIABLE_SCOPE_BEGIN|[8]|scope|List<BlogEntry__c>|true|false
+08:14:07.0 (8185613)|VARIABLE_ASSIGNMENT|[8]|scope|"List of size 100 too large to display"|0x2c8e8071
+08:14:07.0 (8196793)|STATEMENT_EXECUTE|[8]
+08:14:07.0 (8198337)|STATEMENT_EXECUTE|[9]
+08:14:07.0 (8201468)|HEAP_ALLOCATE|[9]|Bytes:1
+08:14:07.0 (8301404)|HEAP_ALLOCATE|[9]|Bytes:3
+08:14:07.0 (8320019)|HEAP_ALLOCATE|[9]|Bytes:4
+08:14:07.0 (8339290)|HEAP_ALLOCATE|[50]|Bytes:5
+08:14:07.0 (8356946)|HEAP_ALLOCATE|[56]|Bytes:5
+08:14:07.0 (8364135)|HEAP_ALLOCATE|[64]|Bytes:7
+08:14:07.0 (8393074)|USER_DEBUG|[9]|DEBUG|#100
+08:14:07.0 (8400608)|STATEMENT_EXECUTE|[10]
+08:14:07.0 (8403486)|HEAP_ALLOCATE|[10]|Bytes:63
+08:14:07.0 (8413734)|HEAP_ALLOCATE|[10]|Bytes:4
+08:14:07.0 (9412251)|SOQL_EXECUTE_BEGIN|[10]|Aggregations:0|SELECT title__c, published__c, description__c FROM BlogEntry__c
+08:14:07.0 (29635172)|SOQL_EXECUTE_END|[10]|Rows:39
+08:14:07.0 (29672246)|HEAP_ALLOCATE|[10]|Bytes:160
+08:14:07.0 (29736027)|HEAP_ALLOCATE|[10]|Bytes:20281
+08:14:07.0 (29779470)|HEAP_ALLOCATE|[10]|Bytes:160
+08:14:07.0 (29798833)|VARIABLE_SCOPE_BEGIN|[10]|resultEntries|List<BlogEntry__c>|true|false
+08:14:07.0 (29827200)|VARIABLE_ASSIGNMENT|[10]|resultEntries|"List of size 39 too large to display"|0x202155c5
+08:14:07.0 (29834358)|STATEMENT_EXECUTE|[13]
+08:14:07.0 (29840365)|HEAP_ALLOCATE|[13]|Bytes:1
+08:14:07.0 (29910423)|HEAP_ALLOCATE|[13]|Bytes:2
+08:14:07.0 (29924924)|HEAP_ALLOCATE|[13]|Bytes:3
+08:14:07.0 (29941045)|USER_DEBUG|[13]|DEBUG|@39
+08:14:07.0 (29948365)|STATEMENT_EXECUTE|[14]
+08:14:07.0 (29951207)|HEAP_ALLOCATE|[14]|Bytes:12
+08:14:07.0 (29954615)|HEAP_ALLOCATE|[14]|Bytes:13
+08:14:07.0 (30081881)|DML_BEGIN|[14]|Op:Upsert|Type:BlogEntry__c|Rows:100
+08:14:07.0 (30113950)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:404
+08:14:07.0 (267684881)|DML_END|[14]
+08:14:07.0 (267831687)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:404
+08:14:07.0 (267863634)|STATEMENT_EXECUTE|[15]
+08:14:07.0 (267949733)|HEAP_ALLOCATE|[15]|Bytes:56
+08:14:07.0 (267989219)|VARIABLE_SCOPE_BEGIN|[15]|dt|Datetime|false|false
+08:14:07.0 (268043650)|VARIABLE_ASSIGNMENT|[15]|dt|"2017-09-22T15:14:07.320Z"
+08:14:07.0 (268049925)|STATEMENT_EXECUTE|[16]
+08:14:07.0 (268093897)|HEAP_ALLOCATE|[16]|Bytes:56
+08:14:07.0 (268107955)|VARIABLE_SCOPE_BEGIN|[16]|dt1|Datetime|false|false
+08:14:07.0 (268128538)|VARIABLE_ASSIGNMENT|[16]|dt1|"2017-09-19T15:14:07.320Z"
+08:14:07.0 (268132823)|STATEMENT_EXECUTE|[17]
+08:14:07.0 (268137600)|HEAP_ALLOCATE|[17]|Bytes:77
+08:14:07.0 (268150186)|HEAP_ALLOCATE|[17]|Bytes:4
+08:14:07.0 (268159717)|HEAP_ALLOCATE|[17]|Bytes:7
+08:14:07.0 (268422627)|SOQL_EXECUTE_BEGIN|[17]|Aggregations:0|SELECT title__c, published__c FROM BlogEntry__c WHERE published__c < :tmpVar1
+08:14:07.0 (271685695)|SOQL_EXECUTE_END|[17]|Rows:62
+08:14:07.0 (271709747)|HEAP_ALLOCATE|[17]|Bytes:252
+08:14:07.0 (271826579)|HEAP_ALLOCATE|[17]|Bytes:8643
+08:14:07.0 (271857795)|HEAP_ALLOCATE|[17]|Bytes:252
+08:14:07.0 (271868924)|VARIABLE_SCOPE_BEGIN|[17]|oldEntries|List<BlogEntry__c>|true|false
+08:14:07.0 (271888596)|VARIABLE_ASSIGNMENT|[17]|oldEntries|"List of size 62 too large to display"|0x1b548a69
+08:14:07.0 (271894420)|STATEMENT_EXECUTE|[20]
+08:14:07.0 (271957513)|DML_BEGIN|[20]|Op:Delete|Type:BlogEntry__c|Rows:62
+08:14:07.0 (271989913)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:252
+08:14:07.0 (469057732)|DML_END|[20]
+08:14:07.0 (469124883)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:252
+08:14:07.0 (469147405)|STATEMENT_EXECUTE|[21]
+08:14:07.0 (469158229)|HEAP_ALLOCATE|[21]|Bytes:4
+08:14:07.0 (469322688)|SOQL_EXECUTE_BEGIN|[21]|Aggregations:0|SELECT title__c, published__c, description__c FROM BlogEntry__c
+08:14:07.0 (488394351)|SOQL_EXECUTE_END|[21]|Rows:38
+08:14:07.0 (488429893)|HEAP_ALLOCATE|[21]|Bytes:156
+08:14:07.0 (488493862)|HEAP_ALLOCATE|[21]|Bytes:19408
+08:14:07.0 (488532900)|HEAP_ALLOCATE|[21]|Bytes:156
+08:14:07.0 (488567189)|VARIABLE_ASSIGNMENT|[21]|resultEntries|"List of size 38 too large to display"|0x7f3af63b
+08:14:07.0 (488574762)|STATEMENT_EXECUTE|[24]
+08:14:07.0 (488580830)|HEAP_ALLOCATE|[24]|Bytes:2
+08:14:07.0 (488654255)|HEAP_ALLOCATE|[24]|Bytes:2
+08:14:07.0 (488668496)|HEAP_ALLOCATE|[24]|Bytes:4
+08:14:07.0 (488685150)|USER_DEBUG|[24]|DEBUG|@@38
+08:14:07.0 (488875196)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (488915833)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (488926551)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (488987958)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"\"Очень своеобразная  (49 more) ...","published__c":"2017-09-22T12:19:00.000Z","description__c":"\u003Cimg align=\"left\" sr (308 more) ...","Id":"a017F000006F7LGQA0"}|0x48f3c2e5
+08:14:07.0 (488997215)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (489057297)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c="Очень своеобразная вещь". Генпрокурор заинтересовался криптовалютами, published__c=2017-09-22 12:19:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/reuters/09/c/blokcheyn_internet_bitkoiny_rtx14ymv.jpg" width="72" height="48" alt="Фото: Reuters" border="0"></img>Правоохранительные органы Беларуси должны более активно вникать в новые финансовые технологии, заявил на конференции в Минске генпрокурор Александр Конюк.<br>, Id=a017F000006F7LGQA0}
+08:14:07.0 (489084990)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (489101708)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (489108537)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (489135776)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Николая Статкевича с (42 more) ...","published__c":"2017-09-22T16:27:00.000Z","description__c":"\u003Cimg align=\"left\" sr (383 more) ...","Id":"a017F000006FFg6QAG"}|0x63fabde0
+08:14:07.0 (489143665)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (489173440)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Николая Статкевича снова задержали. Но близкие не знают за что, published__c=2017-09-22 16:27:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/brushko/0e/d/dvs_statkevich_08092017_tutby_brush_phsl_-7896.jpg" width="72" height="48" alt="Фото: Дмитрий Брушко, TUT.BY" border="0"></img>Все случилось около половины четвертого вечера на выходе из офиса профсоюза РЭП на улице Кульман в Минске. Там проходило заседание совета Белорусского национального конгресса, который возглавляет политик.<br>, Id=a017F000006FFg6QAG}
+08:14:07.0 (489197983)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (489212853)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (489218659)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (489243407)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"\"Возбудили уголовное (61 more) ...","published__c":"2017-09-22T11:32:00.000Z","description__c":"\u003Cimg align=\"left\" sr (303 more) ...","Id":"a017F000006F4aVQAS"}|0x3822f3de
+08:14:07.0 (489250729)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (489277219)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c="Возбудили уголовное дело, вот тогда и проверяйте". Лукашенко о проверках бизнеса, published__c=2017-09-22 11:32:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/0e/3/lukashenko_anfimov_17.jpg" width="72" height="43" alt="Фото: пресс-служба президента" border="0"></img>&quot;Проверяйте кого хотите, но у вас должны быть основания, конкретные причины того, что вы пришли на предприятие, к бизнесмену&quot;, - заявил президент.<br>, Id=a017F000006F4aVQAS}
+08:14:07.0 (489298949)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (489313173)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (489318623)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (489340368)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Генпрокурор о деле з (76 more) ...","published__c":"2017-09-22T11:07:00.000Z","description__c":"\u003Cimg align=\"left\" sr (352 more) ...","Id":"a017F000006F1wHQAS"}|0x62d9ea8f
+08:14:07.0 (489347554)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (489372108)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Генпрокурор о деле задержанного поставщика техники в Туркменистан: Вывел не менее 2 млн долларов, published__c=2017-09-22 11:07:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/04/9/yaraw.jpg" width="72" height="48" alt="" border="0"></img>Задержанный в апреле нынешнего года силовиками бизнесмен Эрнест Алексеев, получив оплату за поставленную технику МАЗ в Туркменистан, вывел на счета аффилированных структур не менее 2 млн долларов, заявил генеральный прокурор Беларуси Александр Конюк.<br>, Id=a017F000006F1wHQAS}
+08:14:07.0 (489394950)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (489408791)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (489413883)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (489434174)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Четвертый срок Мерке (68 more) ...","published__c":"2017-09-22T09:23:00.000Z","description__c":"\u003Cimg align=\"left\" sr (214 more) ...","Id":"a017F000006F1wIQAS"}|0x34ebe8db
+08:14:07.0 (489440943)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (489464765)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Четвертый срок Меркель или ждать сюрприза? Пять вопросов и ответов про выборы в Германии, published__c=2017-09-22 09:23:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/reuters/02/0/cover_vybory_germ_2-1200.jpg" width="72" height="50" alt="Фото: Reuters" border="0"></img>Разбираем по-простому пять главных вопросов о грядущих немецких выборах.<br>, Id=a017F000006F1wIQAS}
+08:14:07.0 (489484005)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (489497811)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (489502847)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (489523664)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"НАТО считает подозре (33 more) ...","published__c":"2017-09-22T07:45:00.000Z","description__c":"\u003Cimg align=\"left\" sr (301 more) ...","Id":"a017F000006F1wJQAS"}|0x2c8561b
+08:14:07.0 (489530556)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (489554223)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=НАТО считает подозрения по "Западу-2017" оправданными, published__c=2017-09-22 07:45:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/reuters/01/7/zapad_2017_ruzhany_8_.jpg" width="72" height="46" alt="Фото: Reuters" border="0"></img>Масштабы и география маневров оказались больше, чем было заявлено изначально. В ходе учений отрабатывался обширный межгосударственный конфликт, посетовали в НАТО.<br>, Id=a017F000006F1wJQAS}
+08:14:07.0 (489574312)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (489587725)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (489593024)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (489612760)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Макей на Генассамбле (60 more) ...","published__c":"2017-09-22T07:15:00.000Z","description__c":"\u003Cimg align=\"left\" sr (386 more) ...","Id":"a017F000006F1wKQAS"}|0x2ddbf99f
+08:14:07.0 (489619432)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (489642938)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Макей на Генассамблее ООН предложил встретиться в Минске России, Китаю, ЕС И США, published__c=2017-09-22 07:15:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/07/3/oon-makey-belarus.jpg" width="72" height="48" alt="Фото: пресс-центр ООН" border="0"></img>&quot;Мы предлагаем, чтобы ключевые глобальные &quot;игроки&quot;, прежде всего Китай, Россия, США, государства Европейского союза, начали диалог о стратегическом видении новых конструктивных отношений&quot;, - заявил министр иностранных дел Беларуси.<br>, Id=a017F000006F1wKQAS}
+08:14:07.0 (489664835)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (489677974)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (489683165)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (489703777)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Зачем президент форс (51 more) ...","published__c":"2017-09-22T15:21:00.000Z","description__c":"\u003Cimg align=\"left\" sr (247 more) ...","Id":"a017F000006F1wLQAS"}|0xfbe339
+08:14:07.0 (489710506)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (489734180)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Зачем президент форсирует развитие сомнительной отрасли электромобилей?, published__c=2017-09-22 15:21:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/06/0/semashko-elektromobil-22082017-1.jpg" width="72" height="57" alt="Фото: пресс-служба правительства Беларуси" border="0"></img>Тема электромобилей полностью захватила президента Беларуси! И Сергея Чалого!<br>, Id=a017F000006F1wLQAS}
+08:14:07.0 (489753062)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (489766341)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (489771839)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (489791669)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Как в Борисове грузя (28 more) ...","published__c":"2017-09-21T19:10:00.000Z","description__c":"\u003Cimg align=\"left\" sr (289 more) ...","Id":"a017F000006F1wMQAS"}|0x6bbd6ecd
+08:14:07.0 (489798234)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (489827083)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Как в Борисове грузят военную технику на эшелоны, published__c=2017-09-21 19:10:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/gosti/0e/a/armiya_borisov_tekhnika_zheleznaya_doroga.jpg" width="72" height="41" alt="Кадр TUT.BY" border="0"></img>Кадры, сделанные днем, 21 сентября, на следующий день по завершении учений, указывают на то, что погрузка российской техники началась.<br>, Id=a017F000006F1wMQAS}
+08:14:07.0 (489847094)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (489860562)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (489865851)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (489886174)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Макей провел на поля (29 more) ...","published__c":"2017-09-21T16:40:00.000Z","description__c":"\u003Cimg align=\"left\" sr (343 more) ...","Id":"a017F000006F1wNQAS"}|0x2b05952f
+08:14:07.0 (489893230)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (489917391)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Макей провел на полях Генассамблеи ООН ряд встреч, published__c=2017-09-21 16:40:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/06/6/makey_10072017.jpg" width="72" height="56" alt="Фото: пресс-служба МИД Беларуси" border="0"></img>Под председательством министра иностранных дел Республики Беларусь Владимира Макея состоялась встреча министров иностранных дел стран - участниц Организации Договора о коллективной безопасности (ОДКБ).<br>, Id=a017F000006F1wNQAS}
+08:14:07.0 (489937840)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (489951256)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (489956478)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (489976467)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Больные вопросы суде (77 more) ...","published__c":"2017-09-21T15:06:00.000Z","description__c":"\u003Cimg align=\"left\" sr (464 more) ...","Id":"a017F000006F1wOQAS"}|0x59e096d1
+08:14:07.0 (489983249)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490007527)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Больные вопросы судебной системы, или Как белорусские бизнесмены рискуют даже там, где рисков нет, published__c=2017-09-21 15:06:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/shukaylo/01/d/naruchniki_arest_zaderzhanie_vzyatka_korrupciya_20170511_shuk_tutby_phsl_9570.jpg" width="72" height="48" alt="Фото: Ольга Шукайло, TUT.BY" border="0"></img>Ожидаемо среди ключевых проблем оказались специфические белорусские практики: самого широкого применения субсидиарной ответственности и борьбы с лжепредпринимательскими структурами, обернувшейся налоговыми претензиями к множеству добросовестных компаний.<br>, Id=a017F000006F1wOQAS}
+08:14:07.0 (490031675)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490045022)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490050217)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490070532)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"На торгах 21 сентябр (27 more) ...","published__c":"2017-09-21T13:37:00.000Z","description__c":"\u003Cimg align=\"left\" sr (309 more) ...","Id":"a017F000006F1wPQAS"}|0x65d54ff
+08:14:07.0 (490077448)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490101068)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=На торгах 21 сентября рубль окреп только к евро, published__c=2017-09-21 13:37:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/shukaylo/0c/a/dengi_rubl_20170511_shuk_tutby_phsl_9621.jpg" width="72" height="48" alt="Фото: Ольга Шукайло, TUT.BY" border="0"></img>На Белорусской валютно-фондовой бирже 21 сентября состоялись очередные торги валютами. Доллар укрепился на BYN 0,0052 - до 1,9457 рубля.<br>, Id=a017F000006F1wPQAS}
+08:14:07.0 (490120548)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490133733)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490139055)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490158869)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"В Беларуси ждут офиц (56 more) ...","published__c":"2017-09-21T12:10:00.000Z","description__c":"\u003Cimg align=\"left\" sr (243 more) ...","Id":"a017F000006F1wQQAS"}|0x61699ff
+08:14:07.0 (490165576)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490188651)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=В Беларуси ждут официальную делегацию из Чечни во главе с Рамзаном Кадыровым, published__c=2017-09-21 12:10:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/00/d/ramzan-kadyrov_2014.jpg" width="72" height="47" alt="Фото: vestikavkaza.ru" border="0"></img>Напомним, о том, что чеченскую делегацию давно ждут в Беларуси, еще год назад сообщил Александр Лукашенко.<br>, Id=a017F000006F1wQQAS}
+08:14:07.0 (490208028)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490221020)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490226080)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490245963)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Беларуси указали на  (24 more) ...","published__c":"2017-09-21T11:54:00.000Z","description__c":"\u003Cimg align=\"left\" sr (245 more) ...","Id":"a017F000006F1wRQAS"}|0x13dc8ff
+08:14:07.0 (490252761)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490275761)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Беларуси указали на потолок ее независимости, published__c=2017-09-21 11:54:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/reuters/10/9/rtx28l40_lukashenko_putin.jpg" width="72" height="51" alt="Фото: Reuters" border="0"></img>У наших соседей нет оснований относиться к суверенитету Минска серьезнее, чем к нему относится Москва.<br>, Id=a017F000006F1wRQAS}
+08:14:07.0 (490294134)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490307518)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490312466)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490331802)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Долги несостоявшегос (67 more) ...","published__c":"2017-09-21T09:11:00.000Z","description__c":"\u003Cimg align=\"left\" sr (246 more) ...","Id":"a017F000006F1wSQAS"}|0x5c368017
+08:14:07.0 (490338462)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490362397)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Долги несостоявшегося спецэкспортера мясо-молочной продукции составляют 60 млн долларов, published__c=2017-09-21 09:11:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/0d/c/mmk-bankrot.jpg" width="72" height="54" alt="" border="0"></img>Экономический суд Минска 6 марта открыл процедуру санации сроком на полтора года в отношении ЗАО &quot;Мясо-молочная компания&quot; (ММК).<br>, Id=a017F000006F1wSQAS}
+08:14:07.0 (490381987)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490395060)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490400028)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490419966)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Спецпредставитель ОБ (93 more) ...","published__c":"2017-09-20T21:58:00.000Z","description__c":"\u003Cimg align=\"left\" sr (373 more) ...","Id":"a017F000006F1wTQAS"}|0x3020ddc2
+08:14:07.0 (490426658)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490451154)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Спецпредставитель ОБСЕ: число нарушений режима прекращения огня снизилось, но на Донбассе продолжают гибнуть люди, published__c=2017-09-20 21:58:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/balay/06/9/kontaktnaya_gruppa_20150506_tutby_phsl_bas_001.jpg" width="72" height="48" alt="Фото: Сергей Балай, TUT.BY" border="0"></img>&quot;Уровень нарушений режима прекращения огня в среднем остается ниже, чем до начала перемирия 25 августа, но тенденции его изменения не могут нас не настораживать&quot;, - констатировал дипломат.<br>, Id=a017F000006F1wTQAS}
+08:14:07.0 (490478559)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490492430)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490497808)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490518377)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Президенту - пистоле (77 more) ...","published__c":"2017-09-20T21:21:00.000Z","description__c":"\u003Cimg align=\"left\" sr (281 more) ...","Id":"a017F000006F1wUQAS"}|0x2cb7358
+08:14:07.0 (490525915)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490550525)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Президенту - пистолет, солдатам - часы. На полигоне под Борисовом завершились учения "Запад-2017", published__c=2017-09-20 21:21:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/prezident/0d/2/lukashenko_zapad_2017_4.jpg" width="72" height="49" alt="Фото: president.gov.by" border="0"></img>Александр Лукашенко вручил особо отличившимся участникам учений часы и сам получил подарок от военных. И как выяснилось, не один.<br>, Id=a017F000006F1wUQAS}
+08:14:07.0 (490571581)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490584940)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490590384)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490610737)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Без Путина и Шойгу.  (52 more) ...","published__c":"2017-09-20T17:32:00.000Z","description__c":"\u003Cimg align=\"left\" sr (462 more) ...","Id":"a017F000006F1wVQAS"}|0x6d5e29ce
+08:14:07.0 (490617995)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490641623)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Без Путина и Шойгу. Под Борисовом поставили точку в учениях "Запад-2017", published__c=2017-09-20 17:32:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/buryakina/0d/9/zapad_20170918_bur_tutby_phsl_-0009.jpg" width="72" height="48" alt="Фото: Дарья Бурякина, TUT.BY" border="0"></img>На 227-м полигоне &quot;Борисовский&quot; 20 сентября поставили точку в учениях &quot;Запад-2017&quot;. За демонстрацией слаженности белорусских и российских войск наблюдал главнокомандующий Вооруженных сил Беларуси Александр Лукашенко. Оператор TUT.BY наблюдал за боем через объектив камеры.<br>, Id=a017F000006F1wVQAS}
+08:14:07.0 (490665874)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490679794)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490685078)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490705857)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Комплекс \"Газпрома\"  (62 more) ...","published__c":"2017-09-20T17:31:00.000Z","description__c":"\u003Cimg align=\"left\" sr (231 more) ...","Id":"a017F000006F1wWQAS"}|0x5802a4a
+08:14:07.0 (490712567)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490736056)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Комплекс "Газпрома" возле Нацбиблиотеки продолжат строить в начале следующего года, published__c=2017-09-20 17:31:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/zamirovskiy/00/e/3_belgazpromcentr_zam_tutby_phsl_08092016.jpg" width="72" height="48" alt="Фото: Вадим Замировский, TUT.BY" border="0"></img>Сейчас &quot;Газпром&quot; выбирает генподрядчика.<br>, Id=a017F000006F1wWQAS}
+08:14:07.0 (490755337)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490768767)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490773837)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490793900)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"На Подсвильском винз (58 more) ...","published__c":"2017-09-20T17:28:00.000Z","description__c":"\u003Cimg align=\"left\" sr (310 more) ...","Id":"a017F000006F1wXQAS"}|0x33f839f5
+08:14:07.0 (490801073)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490828437)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=На Подсвильском винзаводе на 1,5 года ввели процедуру финансового оздоровления, published__c=2017-09-20 17:28:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/shukaylo/00/7/vino_signagi_gruziya_20160512_shuk_tutby_phsl_1643.jpg" width="72" height="48" alt="Фото: Ольга Шукайло, TUT.BY" border="0"></img>Завод планирует восстановить платежеспособность и выполнить обязательства перед кредиторами к концу первого квартала 2019 года.<br>, Id=a017F000006F1wXQAS}
+08:14:07.0 (490850282)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490864078)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490869457)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490889947)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Ради белорусских неф (71 more) ...","published__c":"2017-09-20T15:31:00.000Z","description__c":"\u003Cimg align=\"left\" sr (342 more) ...","Id":"a017F000006F1wYQAS"}|0x6a70dd61
+08:14:07.0 (490897547)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (490922030)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Ради белорусских нефтепродуктов Россия готова уступить в тарифах и железных дорог, и портов, published__c=2017-09-20 15:31:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/reuters/00/6/vedro_nefti_neft_rtx125js.jpg" width="72" height="50" alt="Фото: Reuters" border="0"></img>&quot;Мы им создадим условия, чтобы не гнали [нефтепродукты в Прибалтику]. Мы их создаем. Соответствующие материалы доложены, работа идет весьма активно, поручение получено&quot;, - отметил Молодцов.<br>, Id=a017F000006F1wYQAS}
+08:14:07.0 (490944300)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (490957749)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (490962974)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (490983176)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"В России возбуждено  (36 more) ...","published__c":"2017-09-20T15:20:00.000Z","description__c":"\u003Cimg align=\"left\" sr (253 more) ...","Id":"a017F000006F1wZQAS"}|0x76fc89b8
+08:14:07.0 (490990377)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491013780)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=В России возбуждено дело за использование бренда "БЕЛАЗ", published__c=2017-09-20 15:20:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/obshchestvo/09/f/05_belaz_ekskursiya_20151129_bur_tutby_phsl.jpg" width="72" height="48" alt="Фото: Дарья Бурякина, TUT.BY" border="0"></img>Дело возбуждено по признакам нарушения антимонопольного законодательства.<br>, Id=a017F000006F1wZQAS}
+08:14:07.0 (491033253)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491046961)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491052264)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491072326)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"На торгах 20 сентябр (36 more) ...","published__c":"2017-09-20T13:26:00.000Z","description__c":"\u003Cimg align=\"left\" sr (307 more) ...","Id":"a017F000006F1waQAC"}|0x72aa2f57
+08:14:07.0 (491079246)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491102481)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=На торгах 20 сентября евро и российский рубль подорожали, published__c=2017-09-20 13:26:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/shukaylo/0e/2/dengi_rossii_skii_rubl_20170511_shuk_tutby_phsl_9588.jpg" width="72" height="48" alt="Фото: Ольга Шукайло, TUT.BY" border="0"></img>На Белорусской валютно-фондовой бирже 20 сентября состоялись очередные торги валютами. Доллар не изменился - 1,9405 рубля.<br>, Id=a017F000006F1waQAC}
+08:14:07.0 (491122515)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491136491)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491141549)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491161907)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"\"Рад, что мне довери (66 more) ...","published__c":"2017-09-20T12:32:00.000Z","description__c":"\u003Cimg align=\"left\" sr (397 more) ...","Id":"a017F000006F1wcQAC"}|0x6f9766
+08:14:07.0 (491169063)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491193043)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c="Рад, что мне доверили основную площадку". Лукашенко объяснил, почему Путин не приехал, published__c=2017-09-20 12:32:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/buryakina/01/d/zapad_20170918_bur_tutby_phsl_-9879.jpg" width="72" height="48" alt="Фото: Дарья Бурякина, TUT.BY" border="0"></img>Президенты Беларуси и России заранее договорились о раздельном участии в учениях &quot;Запад-2017&quot;, заявил Александр Лукашенко журналистам в среду, после того как проинспектировал ход учений, передает корреспондент TUT.BY.<br>, Id=a017F000006F1wcQAC}
+08:14:07.0 (491215690)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491228940)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491233990)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491253578)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Ученье - свет? Каким (56 more) ...","published__c":"2017-09-20T11:45:00.000Z","description__c":"\u003Cimg align=\"left\" sr (620 more) ...","Id":"a017F000006F1wdQAC"}|0x6c98d9df
+08:14:07.0 (491260798)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491285324)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Ученье - свет? Каким должно быть образование в конкурентоспособной экономике, published__c=2017-09-20 11:45:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/0a/6/sovetskaya_shkola.jpg" width="72" height="46" alt="Фото с сайта politikus.ru" border="0"></img>Никакая тема не вызывала за последнее время таких ожесточенных споров, как образование. О том, что в образовании накопились системные проблемы, не говорит только тот, кто потерял голос, обсуждая эти проблемы со всеми встречными. Похоже, что даже работа, зарплата и цены отошли на второй план, ведь &quot;на кону&quot; будущее детей. Сложность в том, что экспертов в теме образования столько, сколько жителей в стране, поэтому любое новшество вызывает закономерную реакцию общества.<br>, Id=a017F000006F1wdQAC}
+08:14:07.0 (491311836)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491325102)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491330005)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491349908)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Лукашенко проинспект (26 more) ...","published__c":"2017-09-20T10:20:00.000Z","description__c":"\u003Cimg align=\"left\" sr (360 more) ...","Id":"a017F000006F1weQAC"}|0x7ebb2cbd
+08:14:07.0 (491357111)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491380274)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Лукашенко проинспектировал учения "Запад-2017", published__c=2017-09-20 10:20:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/buryakina/0f/d/zapad_20170918_bur_tutby_phsl_-9907.jpg" width="72" height="48" alt="Фото: Дарья Бурякина, TUT.BY" border="0"></img>Президенту доложили о развитии военно-политической обстановки в Европейском регионе и ее влиянии на обеспечение военной безопасности Союзного государства, а также о порядке применения армии.<br>, Id=a017F000006F1weQAC}
+08:14:07.0 (491401941)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491415333)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491420385)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491440366)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Под каток российских (31 more) ...","published__c":"2017-09-20T10:03:00.000Z","description__c":"\u003Cimg align=\"left\" sr (278 more) ...","Id":"a017F000006F1wfQAC"}|0x5dc874aa
+08:14:07.0 (491447217)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491470758)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Под каток российских властей попал и банк Гуцериева, published__c=2017-09-20 10:03:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/reuters/00/9/mikhail_guceriev_rossneft_20170512_rtr2x70z.jpg" width="72" height="49" alt="Фото: Reuters" border="0"></img>Михаил Гуцериев известен своими активами и в Беларуси, в том числе инвестициями в ИТ-проекты и &quot;Славкалий&quot;.<br>, Id=a017F000006F1wfQAC}
+08:14:07.0 (491490080)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491503026)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491508183)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491528174)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Норматив обязательно (55 more) ...","published__c":"2017-09-20T09:35:00.000Z","description__c":"\u003Cimg align=\"left\" sr (328 more) ...","Id":"a017F000006F1wgQAC"}|0x21600cd2
+08:14:07.0 (491535178)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491559147)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Норматив обязательной продажи валютной выручки с 1 октября снижается до 10%, published__c=2017-09-20 09:35:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/shukaylo/0f/b/dengi_dollar_20170511_shuk_tutby_phsl_9552.jpg" width="72" height="48" alt="Фото: Ольга Шукайло, TUT.BY" border="0"></img>Как заявил на днях зампред правления Нацбанка Сергей Калечиц, уже в 2018 году в Беларуси планируется отказаться от обязательной продажи валютной выручки.<br>, Id=a017F000006F1wgQAC}
+08:14:07.0 (491579989)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491593010)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491598065)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491617322)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Рапота: До конца год (50 more) ...","published__c":"2017-09-20T09:24:00.000Z","description__c":"\u003Cimg align=\"left\" sr (359 more) ...","Id":"a017F000006F1whQAC"}|0xb9c7f00
+08:14:07.0 (491624909)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491649172)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Рапота: До конца года может быть решен вопрос о взаимном признании виз, published__c=2017-09-20 09:24:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/buryakina/04/a/zapad_20170918_bur_tutby_phsl_-9765.jpg" width="72" height="48" alt="Фото: Дарья Бурякина, TUT.BY" border="0"></img>&quot;До конца года может быть решен вопрос о взаимном признании виз. Это избавит от проблем граждан третьих стран, которые пересекают белорусско-российскую границу&quot;, - сообщил Рапота.<br>, Id=a017F000006F1whQAC}
+08:14:07.0 (491670795)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491683832)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491688832)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491709084)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Вместо Путина с Лука (59 more) ...","published__c":"2017-09-19T20:07:00.000Z","description__c":"\u003Cimg align=\"left\" sr (337 more) ...","Id":"a017F000006F1wiQAC"}|0x2c65740a
+08:14:07.0 (491715710)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491741024)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Вместо Путина с Лукашенко на полигоне под Борисовом учения закроет Сергей Шойгу, published__c=2017-09-19 20:07:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/it/0f/5/shoygu_12.jpg" width="72" height="48" alt="" border="0"></img>Как рассказал представитель Минобороны журналистам, на полигоне пройдут учения по отражению наступления условного противника, проведению контрнаступления с дальнейшим разгромом противника и восстановлением утраченного положения.<br>, Id=a017F000006F1wiQAC}
+08:14:07.0 (491762858)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491776178)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491781630)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491800789)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"ФАС России против ог (36 more) ...","published__c":"2017-09-19T19:16:00.000Z","description__c":"\u003Cimg align=\"left\" sr (310 more) ...","Id":"a017F000006F1wjQAC"}|0x32162808
+08:14:07.0 (491807546)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491835451)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=ФАС России против ограничений на ввоз сахара из Беларуси, published__c=2017-09-19 19:16:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/fotoillyustracii_tut.by/03/a/sakhar_08090411.jpg" width="72" height="47" alt="Фото: photo.bymedia.net" border="0"></img>Федеральная антимонопольная служба (ФАС) России выступает за стимулирование экспорта сахара и проведение интервенций вместо введения запрета на импорт.<br>, Id=a017F000006F1wjQAC}
+08:14:07.0 (491856264)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491869637)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491874603)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491894958)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"\"Мы не хотим воевать (65 more) ...","published__c":"2017-09-20T13:10:00.000Z","description__c":"\u003Cimg align=\"left\" sr (399 more) ...","Id":"a017F000006F1wbQAC"}|0x1331a404
+08:14:07.0 (491901715)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (491926046)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c="Мы не хотим воевать. Но если дадут по морде, мы ответим". Лукашенко об итогах учений, published__c=2017-09-20 13:10:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/buryakina/07/4/zapad_20170918_bur_tutby_phsl_-0537.jpg" width="72" height="48" alt="Фото: Дарья Бурякина, TUT.BY" border="0"></img>Попытки дискредитации белорусско-российских учений &quot;Запад-2017&quot; были крайне непрофессиональными, все войска после учений вернутся в места постоянной дислокации, заявил журналистам президент Беларуси Александр Лукашенко.<br>, Id=a017F000006F1wbQAC}
+08:14:07.0 (491948871)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (491962165)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (491967391)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (491987146)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Не совпали графики?  (54 more) ...","published__c":"2017-09-19T18:21:00.000Z","description__c":"\u003Cimg align=\"left\" sr (521 more) ...","Id":"a017F000006F1wlQAC"}|0x7b3dad1d
+08:14:07.0 (491994284)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (492019211)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Не совпали графики? Почему Путин решил не ехать в Беларусь на "Запад-2017", published__c=2017-09-19 18:21:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/0b/2/putin_poligon_luzhskiy_ucheniya_zapad-2017_1.jpg" width="72" height="44" alt="Фото: kremlin.ru" border="0"></img>&quot;Не совпали графики&quot;, - так газете &quot;Коммерсантъ&quot; объяснили то, что президенты Беларуси и России будут наблюдать за учениями &quot;Запад-2017&quot; по отдельности. Каждый на своей территории. Понятно, что такое объяснение вряд ли имеет что-то общее с реальной причиной. В таком решении лидеров двух стран читается, скорее, политическое послание.<br>, Id=a017F000006F1wlQAC}
+08:14:07.0 (492044004)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (492057363)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (492062600)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (492082708)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"ЛДП: Следующие парла (69 more) ...","published__c":"2017-09-19T16:20:00.000Z","description__c":"\u003Cimg align=\"left\" sr (347 more) ...","Id":"a017F000006F1wmQAC"}|0x7c7f5354
+08:14:07.0 (492090233)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (492114134)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=ЛДП: Следующие парламентские выборы должны пройти по пропорционально-мажоритарной системе, published__c=2017-09-19 16:20:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/politika/06/6/oleg_gaydukevich_20160819_shuk_tutby_phs_2334.jpg" width="72" height="48" alt="Фото: TUT.BY" border="0"></img>Люди хотят иметь альтернативу на выборах, подчеркнул Гайдукевич. &quot;Самое страшное, когда альтернативы нет, когда выборы проходят с заранее известным результатом&quot;, - сказал он.<br>, Id=a017F000006F1wmQAC}
+08:14:07.0 (492136411)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (492149632)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (492154559)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (492174552)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Доля МАЗа на российс (38 more) ...","published__c":"2017-09-19T18:59:00.000Z","description__c":"\u003Cimg align=\"left\" sr (316 more) ...","Id":"a017F000006F1wkQAC"}|0x7f2a62bb
+08:14:07.0 (492181351)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (492205109)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Доля МАЗа на российском рынке новых грузовиков упала до 5%, published__c=2017-09-19 18:59:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/avto/06/f/maz_vmich_auto_20160728-3.jpg" width="72" height="54" alt="Фото: Валентин Михальцов, TUT.BY" border="0"></img>Минский автомобильный завод по итогам лета занимает 7−8 место по продажам на российском рынке новых грузовых машин. Хотя ранее прочно входил в первую тройку.<br>, Id=a017F000006F1wkQAC}
+08:14:07.0 (492225644)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (492239018)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (492244076)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (492263547)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"На торгах 22 сентябр (23 more) ...","published__c":"2017-09-22T13:36:00.000Z","description__c":"\u003Cimg align=\"left\" sr (310 more) ...","Id":"a017F000006F7VdQAK"}|0x6125f8de
+08:14:07.0 (492270753)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (492294087)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=На торгах 22 сентября рубль окреп к доллару, published__c=2017-09-22 13:36:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/shukaylo/0d/2/dengi_dollar_20170511_shuk_tutby_phsl_9554.jpg" width="72" height="48" alt="Фото: Ольга Шукайло, TUT.BY" border="0"></img>На Белорусской валютно-фондовой бирже 22 сентября состоялись очередные торги валютами. Доллар снизился на BYN 0,0091 - до 1,9366 рубля.<br>, Id=a017F000006F7VdQAK}
+08:14:07.0 (492313954)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (492326905)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (492332036)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (492351785)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Белорусские таможенн (71 more) ...","published__c":"2017-09-22T14:58:00.000Z","description__c":"\u003Cimg align=\"left\" sr (369 more) ...","Id":"a017F000006F7bLQAS"}|0x7766e4a2
+08:14:07.0 (492358805)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (492382514)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Белорусские таможенники изъяли санкционки в 3 раза больше, чем россияне на своей территории, published__c=2017-09-22 14:58:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/obshchestvo/10/e/rosselkhoznadzor_vas_tutby_phsl_img_6833.jpg" width="72" height="48" alt="Фото: Александр Васюкович" border="0"></img>Белорусские таможенники в рамках предотвращения ввоза в Россию санкционных товаров провели контроль более 2 млн 300 тыс. транспортных средств, которые въезжали с территории стран Западной Европы.<br>, Id=a017F000006F7bLQAS}
+08:14:07.0 (492405095)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (492418844)|HEAP_ALLOCATE|[25]|Bytes:20
+08:14:07.0 (492424072)|VARIABLE_SCOPE_BEGIN|[25]|blog|BlogEntry__c|true|false
+08:14:07.0 (492443902)|VARIABLE_ASSIGNMENT|[25]|blog|{"title__c":"Путь к экономическом (81 more) ...","published__c":"2017-09-22T12:47:00.000Z","description__c":"\u003Cimg align=\"left\" sr (430 more) ...","Id":"a017F000006F7OTQA0"}|0x7105fce9
+08:14:07.0 (492451204)|STATEMENT_EXECUTE|[26]
+08:14:07.0 (492475016)|USER_DEBUG|[26]|DEBUG|BlogEntry__c:{title__c=Путь к экономическому росту - в голове, или Как раскодировать белоруса. Рудый анонсировал новую книгу, published__c=2017-09-22 12:47:00, description__c=<img align="left" src="https://img.tyt.by/thumbnails/n/06/e/novaya_kniga_kirilla_rudogo.jpg" width="72" height="62" alt="Фото: Кирилл Рудый, twitter.com/kvrudy" border="0"></img>Экс-помощник президента, посол Беларуси в Китае Кирилл Рудый в своем аккаунте в твиттере анонсировал выход своей второй книги. Книга &quot;Потому что так решили мы: поведенческая экономика Беларуси и ее раскодирование&quot; должна появиться в продаже в ноябре-декабре.<br>, Id=a017F000006F7OTQA0}
+08:14:07.0 (492498886)|HEAP_ALLOCATE|[25]|Bytes:5
+08:14:07.0 (492509962)|VARIABLE_ASSIGNMENT|[25]|blog|null|
+08:14:07.499 (499026330)|CUMULATIVE_LIMIT_USAGE
+08:14:07.499 (499026330)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 200
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 60000
+  Maximum heap size: 0 out of 12000000
+  Number of callouts: 0 out of 0
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 0
+  Number of queueable jobs added to the queue: 0 out of 1
+  Number of Mobile Apex push calls: 0 out of 10
+
+08:14:07.499 (499026330)|CUMULATIVE_LIMIT_USAGE_END
+
+08:14:07.0 (499125264)|CODE_UNIT_FINISHED|RSS
+08:14:07.0 (499884745)|EXECUTION_FINISHED
