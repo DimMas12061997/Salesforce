@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>PrioritySort</members>
+		<members>Request</members>
+		<members>RequestsSortingController</members>
+		<members>RequestSheduler</members>
+		<members>EditingRequestBatch</members>
+		<members>EmailManager</members>
+		<members>ControllerForRequestManagement</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>RequisitionManagement</members>
+		<members>ShowAllRequests</members>
+		<members>task3</members>
+		<members>ConfirmationRequests</members>
+		<name>AuraDefinitionBundle</name>
+	</types>
+	<types>
+		<members>DragulaCss</members>
+		<members>DragulaJs</members>
+		<name>StaticResource</name>
+	</types>
+	<types>
+		<members>DeleteForApproval</members>
+		<members>UpdateRequestByResultApproval</members>
+		<name>ApexTrigger</name>
+	</types>
+	<version>36.0</version>
+</Package>

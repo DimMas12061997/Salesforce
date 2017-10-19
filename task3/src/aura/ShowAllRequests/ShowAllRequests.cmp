@@ -1,0 +1,248 @@
+<aura:component controller="RequestsSortingController" implements="force:appHostable,force:hasRecordId" access="global">
+
+  <div class="container" style="position:absolute;left:1%;top:4%;width:30%">
+    <ui:button label="Back" press="{!c.navigate}" />
+  </div>
+
+  <ltng:require scripts="/resource/jquery224" />
+  <aura:attribute name="selectedAccount" type="String" />
+  <aura:attribute name="lookupId" type="Id" />
+  <aura:attribute name="selectedContact" type="String" />
+  <aura:attribute name="lookupIdContact" type="Id" />
+  <aura:attribute name="contactList" type="List" default="[]" />
+  <aura:attribute name="accountList" type="List" default="[]" />
+  <aura:attribute name="listOfAccounts" type="List" default="[]" />
+  <aura:attribute name="isOpen" type="boolean" default="false"/>
+  <aura:attribute name="isOpenEdit" type="boolean" default="false"/>
+  <aura:attribute name="idForDelete" type="Id"/>
+  <aura:attribute name="idForEdit" type="Id"/>
+  <aura:attribute name="roles" type="String[]" default="['System Administrator','Clone Standart User']"/>
+  <aura:attribute name="statuses" type="String[]" default="['new','in progress','waiting', 'closed']"/>
+  <aura:attribute name="prorities" type="String[]" default="['high', 'mid', 'low']"/>
+  <aura:attribute name="profile" type="Profile"/>
+  <aura:attribute name="user" type="User"/>
+  <aura:attribute name="ListOfRequests" type="Request__c[]"/>           
+  <aura:attribute name="arrowDirection" type="String" default="arrowup"/>
+  <aura:attribute name="isAsc" type="boolean" default="true"/> 
+  <aura:attribute name="selectedTabsoft" type="String" default="Name"/>
+  <aura:handler name="init" value="{!this}" action="{!c.loadRequestsList}"/> 
+  <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}"/>
+
+  <table class="slds-table slds-table--bordered slds-table--cell-buffer" style="position:absolute;top:10%">
+    <thead>
+      <tr class="slds-text-title--caps">
+        <th class="slds-is-sortable slds-text-title--caps" scope="col" onclick="{!c.sortName}">
+          <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+            <span class="slds-assistive-text">Sort</span>
+            <span class="slds-truncate" title="Name">Request Name</span>  
+            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'Name') }">&nbsp;  &#9660; </aura:if>  
+            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'Name') }"> &nbsp;  &#9650; </aura:if>                        
+          </a>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Account">Account</div>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Contact">Contact</div>
+        </th>
+        <th class="slds-is-sortable slds-text-title--caps" scope="col" onclick="{!c.sortStatus}">
+          <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+            <span class="slds-assistive-text">Sort</span>
+            <span class="slds-truncate" title="Status">Status</span>
+            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'Status__c') }">&nbsp;  &#9660;</aura:if>
+            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'Status__c') }">&nbsp;  &#9650;</aura:if>     
+          </a>
+        </th>
+        <th class="slds-is-sortable slds-text-title--caps" scope="col" onclick="{!c.sortPriority}">
+          <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+            <span class="slds-assistive-text">Sort</span>
+            <span class="slds-truncate" title="Priority">Priority</span>
+            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'Priority__c') }">&nbsp;  &#9660;</aura:if>
+            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'Priority__c') }">&nbsp;  &#9650;</aura:if>     
+          </a>
+        </th>
+        <th class="slds-is-sortable slds-text-title--caps" scope="col" onclick="{!c.sortDate}">
+          <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+            <span class="slds-assistive-text">Sort</span>
+            <span class="slds-truncate" title="Priority">Expiration Date</span>
+            <aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'Expiration_date__c') }">&nbsp;  &#9660;</aura:if>
+            <aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'Expiration_date__c') }">&nbsp;  &#9650;</aura:if>     
+          </a>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Phone">Phone</div>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Description">Description</div>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Edit">Edit</div>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Delete">Delete</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <aura:iteration items="{!v.ListOfRequests}" var="request">  
+        <tr>
+          <th scope="row">
+            <div class="slds-truncate" title="{!request.Name}">{!request.Name}</div>
+          </th>
+          <th>
+            <div class="lookupInput">
+              <label style="display:block;"> Account Name
+                <input style="display:block;" id="{!request.Id}" type="text" class="slds-input accountInputClass" 
+                 placeholder="{!request.AccountName__c}"  onclick="{!c.onfocus}" onkeyup="{!c.keyPressController}"/>
+               </label>
+             </div>
+             <div role="listbox" class="account-name slds-hide">
+              <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                <aura:iteration items="{!v.accountList}" var="account" >
+                  <li role="presentation" class="slds-listbox__item">
+                    <span id="listbox-option-unique-id-01" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                      <span class="slds-media__body">
+                        <span class="slds-listbox__option-text slds-listbox__option-text_entity" onclick="{!c.populateValue}">{!account.Name}</span>
+                      </span>
+                    </span>
+                  </li>
+                </aura:iteration>
+              </ul>
+            </div>
+            <!-- <div class="slds-truncate" title="{!request.ContactName__c}">{!request.AccountName__c}</div> -->
+          </th>
+          <th scope="row">
+       <!--     <div class="lookupInputContact">
+            <label style="display:block;"> Contact Name
+              <input style="display:block;" id="{!request.Id}" type="text" class="slds-input contactInputClass" 
+               placeholder="{!request.ContactName__c}"  onclick="{!c.onfocusContact}" onkeyup="{!c.keyPressControllerContact}"/>
+             </label>
+           </div>
+           <div role="listbox" class="contact-name slds-hide">
+            <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+              <aura:iteration items="{!v.contactList}" var="contact" >
+                <li role="presentation" class="slds-listbox__item">
+                  <span id="listbox-option-unique-id-01" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                    <span class="slds-media__body">
+                      <span class="slds-listbox__option-text slds-listbox__option-text_entity" onclick="{!c.populateValueContact}">{!contact.Name}</span>
+                    </span>
+                  </span>
+                </li>
+              </aura:iteration>
+            </ul>
+          </div> -->
+          <div class="slds-truncate" title="{!request.ContactName__c}">{!request.ContactName__c}</div>
+        </th>
+        <th scope="row">
+          <div class="slds-truncate" title="{!request.Status__c}">{!request.Status__c}</div>
+        </th>
+        <th scope="row">
+          <div class="slds-truncate" title="{!request.Priority__c}">{!request.Priority__c}</div>
+        </th>
+        <th scope="row">
+          <div class="slds-truncate" title="{!request.Expiration_date__c}">{!request.Expiration_date__c}</div>
+        </th> 
+        <th scope="row">
+          <div class="slds-truncate" title="{!request.Phone__c}">{!request.Phone__c}</div>
+        </th> 
+        <th scope="row">
+          <div class="slds-truncate" title="{!request.Description__c}">{!request.Description__c}</div>
+        </th> 
+        <th scope="row">
+         <aura:if isTrue="{!equals(v.roles[0], v.profile.Name)}"> 
+          <button  class="slds-button slds-button--brand" onclick="{!c.openModelEdit}" id="{!request.Id}">Edit</button>
+          <aura:set attribute="else"> 
+            <aura:if isTrue="{!equals(request.CreatedById, v.user.Id)}"> 
+              <button  class="slds-button slds-button--brand" onclick="{!c.openModelEdit}" id="{!request.Id}">Edit</button>
+            </aura:if> 
+          </aura:set> 
+        </aura:if> 
+      </th> 
+      <th scope="row">
+       <aura:if isTrue="{!equals(v.roles[0], v.profile.Name)}"> 
+        <button  class="slds-button slds-button--brand" onclick="{!c.openModel}" id="{!request.Id}">Delete</button>
+        <aura:set attribute="else">
+         <aura:if isTrue="{!equals(request.CreatedById, v.user.Id)}"> 
+          <button  class="slds-button slds-button--brand" onclick="{!c.openModel}" id="{!request.Id}">Delete</button>
+        </aura:if>
+      </aura:set>
+    </aura:if>
+    <aura:if isTrue="{!v.isOpen}">
+     <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+      <div class="slds-modal__container">
+        <div class="slds-modal__header">
+          <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">
+            X
+            <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2 id="header99" class="slds-text-heading--medium">Delete Request</h2>
+        </div>
+        <div class="slds-modal__content slds-p-around--medium">
+          <p>Are you sure you want to delete this Request?</p>
+        </div>
+        <div class="slds-modal__footer">
+          <button class="slds-button slds-button--neutral" onclick="{!c.closeModel}" >Cancel</button>
+          <button class="slds-button slds-button--brand" onclick="{!c.deleteRequest}">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="slds-backdrop slds-backdrop--open"></div>
+  </aura:if>
+</th> 
+</tr>
+</aura:iteration>
+</tbody>
+</table> 
+<aura:iteration items="{!v.ListOfRequests}" var="request"> 
+  <aura:if isTrue="{!and(v.isOpenEdit == true, request.Id == v.idForEdit)}">
+   <div role="dialog"  style=" position: absolute; top: 1%; " tabindex="-1" aria-labelledby="header23" class="slds-modal slds-fade-in-open slds-modal_large">
+    <div class="slds-modal__container" style="high:90%; width:40%">
+      <div class="slds-modal__header">
+        <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModelEdit}">
+          X
+          <span class="slds-assistive-text">Close</span>
+        </button>
+        <h2 id="header99" class="slds-text-heading--medium">Edit Request</h2>
+      </div>
+      <div class="slds-modal__content slds-p-around--medium">
+        <lightning:input value="{!request.Name}" label ="Name" aura:id="requestform" required="true"/>
+        <p>Account</p>
+        <ui:inputSelect value="{!request.AccountName__c}">
+          <aura:iteration items="{!v.listOfAccounts}" var="account">
+            <ui:inputSelectOption text="{!account.Name}" label="{!account.Name}"/>
+         </aura:iteration>
+       </ui:inputSelect>
+       <p>Contact</p>
+       <ui:inputSelect value="{!request.ContactName__c}">
+        <aura:iteration items="{!v.contactList}" var="contact">
+         <ui:inputSelectOption text="{!contact.Name}" label="{!contact.Name}"/>
+       </aura:iteration>
+     </ui:inputSelect>
+     <p>Status</p>
+     <ui:inputSelect value="{!request.Status__c}">
+      <aura:iteration items="{!v.statuses}" var="status">
+       <ui:inputSelectOption text="{!status}" label="{!status}"/>
+     </aura:iteration>
+   </ui:inputSelect>
+   <p>Priority</p>
+   <ui:inputSelect value="{!request.Priority__c}">
+    <aura:iteration items="{!v.prorities}" var="priority">
+     <ui:inputSelectOption text="{!priority}" label="{!priority}"/>
+   </aura:iteration>
+ </ui:inputSelect>
+ <lightning:input value="{!request.Expiration_date__c}" label ="Expiration date" type="Date" aura:id="requestform"/>
+ <lightning:input value="{!request.Phone__c}" label ="Phone" aura:id="requestform"/>
+ <lightning:textarea value="{!request.Description__c}" label ="Description" aura:id="requestform"/>
+
+
+</div>
+<div class="slds-modal__footer">
+  <button class="slds-button slds-button--neutral" onclick="{!c.closeModelEdit}" >Cancel</button>
+  <button class="slds-button slds-button--brand" onclick="{!c.editRequest}">Save</button>
+</div>
+</div>
+</div>
+<div class="slds-backdrop slds-backdrop--open"></div>
+</aura:if>
+</aura:iteration>
+</aura:component>

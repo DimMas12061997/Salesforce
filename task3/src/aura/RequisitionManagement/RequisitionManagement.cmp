@@ -1,0 +1,155 @@
+<aura:component controller="Request" implements="force:appHostable">
+
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <aura:attribute name="requests" type="Request__c[]"/>
+    <aura:attribute name="status" type="String[]" default="['new', 'in progress', 'waiting']"/>
+    <ltng:require styles="{!$Resource.DragulaCss}"
+      scripts="{!$Resource.DragulaJs}"
+      afterScriptsLoaded="{!c.afterDragulaLoaded}"
+      />
+
+      <div aura:id="container">   
+        <div class="slds-text-heading--medium" style="position:absolute;left:11%;top:20%;"> {!v.status[0]}</div>
+        <div style="background:brown;position:absolute;left:2%;top:25%;width:25%">
+            <ul aura:id="from-draggable" class="from-draggable">
+             <li class="ui-state-default" style="visibility: hidden;" title="{!v.status[0]}">Default</li>
+             <aura:iteration items="{!v.requests}" var="request" >
+                <aura:if isTrue="{!equals(request.Status__c, v.status[0])}">
+                    <li class="slds-p-around--xx-small" id="{!request.Id}" title="{!v.status[0]}">
+                        <article class="slds-card">
+                            <div class="slds-card__body">
+                                <div class="slds-tile slds-tile--board">
+                                    <h3 class="slds-truncate" title="{!request.Name}">
+                                        <a href="javascript:void(0);">{!request.Name}</a>
+                                    </h3>
+                                    <p class="slds-p-horizontal--small">
+                                        Account: {!request.AccountName__c}
+                                    </p>
+                                    <p class="slds-p-horizontal--small">
+                                        Contact: {!request.ContactName__c}
+                                    </p>
+                                    <p class="slds-p-horizontal--small">
+                                        Priority: {!request.Priority__c}
+                                    </p>
+                                    <p class="slds-p-horizontal--small">
+                                        Phone: {!request.Phone__c}
+                                    </p>
+                                    <p class="slds-p-horizontal--small">
+                                        Status: {!request.Status__c}
+                                    </p>
+                                    <p class="slds-p-horizontal--small">
+                                        Expiration date: {!request.Expiration_date__c}
+                                    </p>
+                                    <p class="slds-p-horizontal--small">
+                                        Description: {!request.Description__c}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                </aura:if>
+            </aura:iteration>
+        </ul>
+    </div>
+    <div class="slds-text-heading--medium" style="position:absolute;left:46%;top:20%;"> {!v.status[1]}</div> 
+    <div style="background:green;position:absolute;left:37%;top:25%;width:25%"> 
+        <ul aura:id="from-draggable" class="from-draggable"> 
+          <li class="ui-state-default" style="visibility: hidden;" title="{!v.status[1]}">Default</li>
+          <aura:iteration items="{!v.requests}" var="request"> 
+            <aura:if isTrue="{!equals(request.Status__c, v.status[1])}"> 
+                <li class="slds-p-around--xx-small" id="{!request.Id}" title="{!v.status[1]}"> 
+                    <article class="slds-card"> 
+                        <div class="slds-card__body"> 
+                            <div class="slds-tile slds-tile--board"> 
+                                <h3 class="slds-truncate" title="{!request.Name}"> 
+                                    <a href="javascript:void(0);">{!request.Name}</a> 
+                                </h3> 
+                                <p class="slds-p-horizontal--small">
+                                    Account: {!request.AccountName__c}
+                                </p>
+                                <p class="slds-p-horizontal--small">
+                                    Contact: {!request.ContactName__c}
+                                </p>
+                                <p class="slds-p-horizontal--small"> 
+                                    Priority: {!request.Priority__c} 
+                                </p> 
+                                <p class="slds-p-horizontal--small"> 
+                                    Phone: {!request.Phone__c} 
+                                </p> 
+                                <p class="slds-p-horizontal--small"> 
+                                    Status: {!request.Status__c} 
+                                </p> 
+                                <p class="slds-p-horizontal--small"> 
+                                    Expiration date: {!request.Expiration_date__c} 
+                                </p> 
+                                <p class="slds-p-horizontal--small"> 
+                                    Description: {!request.Description__c} 
+                                </p> 
+                            </div> 
+                        </div> 
+                    </article> 
+                </li> 
+            </aura:if> 
+        </aura:iteration> 
+    </ul> 
+</div>
+<div class="slds-text-heading--medium" style="position:absolute;left:82%;top:20%;"> {!v.status[2]}</div> 
+<div style="background:yellow;position:absolute;left:72%;top:25%;width:25%"> 
+    <ul aura:id="from-draggable" class="from-draggable"> 
+      <li class="ui-state-default" style="visibility: hidden;" title="{!v.status[2]}">Default</li>
+      <aura:iteration items="{!v.requests}" var="request"> 
+        <aura:if isTrue="{!equals(request.Status__c, v.status[2])}"> 
+            <li class="slds-p-around--xx-small" id="{!request.Id}"  title="{!v.status[2]}"> 
+                <article class="slds-card"> 
+                    <div class="slds-card__body"> 
+                        <div class="slds-tile slds-tile--board" > 
+                            <h3 class="slds-truncate" title="{!request.Name}"> 
+                                <a href="javascript:void(0);">{!request.Name}</a> 
+                            </h3> 
+                            <p class="slds-p-horizontal--small">
+                                Account: {!request.AccountName__c}
+                            </p>
+                            <p class="slds-p-horizontal--small">
+                                Contact: {!request.ContactName__c}
+                            </p>
+                            <p class="slds-p-horizontal--small"> 
+                                Priority: {!request.Priority__c} 
+                            </p> 
+                            <p class="slds-p-horizontal--small"> 
+                                Phone: {!request.Phone__c} 
+                            </p> 
+                            <p class="slds-p-horizontal--small"  id="card"> 
+                                Status: {!request.Status__c} 
+                            </p> 
+                            <p class="slds-p-horizontal--small"> 
+                                Expiration date: {!request.Expiration_date__c} 
+                            </p> 
+                            <p class="slds-p-horizontal--small"> 
+                                Description: {!request.Description__c} 
+                            </p> 
+                        </div> 
+                    </div> 
+                </article> 
+            </li>
+        </aura:if> 
+    </aura:iteration> 
+</ul> 
+</div>
+<div class="slds-panel slds-grid slds-grid--vertical slds-nowrap" style="position:absolute;left:35%;top:1rem;width:30%">
+    <ul aura:id="to-draggable" class="to-draggable">
+        <li class="slds-p-around--xx-small" aura:id="to-placekeeper">
+            <div class="slds-file-selector__dropzone" style="height: 50px; align:center">
+                <span class="slds-file-selector__text" style="position:absolute;top:30%;left:30%">Drag here to close the request</span>
+            </div>
+        </li>
+    </ul>
+</div>
+</div>
+<div class="container" style="position:absolute;left:3%;top:4%;width:10%">
+    <ui:button label="New request" press="{!c.doClickCreateRecordBtn}" />
+</div>
+
+<div class="container" style="position:absolute;right:1%;top:4%;width:10%">
+    <ui:button label="Show all requests" press="{!c.navigate}" />
+</div>
+</aura:component>

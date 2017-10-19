@@ -1,0 +1,113 @@
+<aura:component  controller="ControllerForRequestManagement"  implements="force:appHostable">
+	<aura:attribute name="ListOfRequests" type="Request__c[]"/>
+	<aura:attribute name="roles" type="String[]" default="['System Administrator','Clone Standart User']"/>
+	<aura:attribute name="profile" type="Profile"/>
+	<aura:handler name="init" value="{!this}" action="{!c.loadRequestsList}"/> 
+	<div class="slds-grid">
+		<aura:if isTrue="{!equals(v.roles[0], v.profile.Name)}"> 
+			<div class="slds-col">
+				<table class="slds-table slds-table--bordered slds-table--cell-buffer" style="position:absolute;top:10%">
+					<thead>
+						<tr class="slds-text-title--caps">
+							<th scope="col">
+								<div class="slds-truncate" title="Old Request">Old Request</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="New Request">New Request</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Edit">Approve</div>
+							</th>
+							<th scope="col">
+								<div class="slds-truncate" title="Delete">Reject</div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<aura:iteration items="{!v.ListOfRequests}" var="request">
+							<aura:if isTrue="{!request.EditStatus__c == true || request.DeleteStatus__c == true}">
+								<tr>
+									<th scope="row">
+										<article class="slds-card"> 
+											<div class="slds-card__body"> 
+												<div class="slds-tile slds-tile--board"> 
+													<h3 class="slds-truncate" title="{!request.Name}"> 
+														<a href="javascript:void(0);">{!request.Name}</a> 
+													</h3> 
+													<p class="slds-p-horizontal--small">
+														Account: {!request.AccountName__c}
+													</p>
+													<p class="slds-p-horizontal--small">
+														Contact: {!request.ContactName__c}
+													</p>
+													<p class="slds-p-horizontal--small"> 
+														Priority: {!request.Priority__c} 
+													</p> 
+													<p class="slds-p-horizontal--small"> 
+														Phone: {!request.Phone__c} 
+													</p> 
+													<p class="slds-p-horizontal--small"> 
+														Status: {!request.Status__c} 
+													</p> 
+													<p class="slds-p-horizontal--small"> 
+														Expiration date: {!request.Expiration_date__c} 
+													</p> 
+													<p class="slds-p-horizontal--small"> 
+														Description: {!request.Description__c} 
+													</p> 
+												</div> 
+											</div> 
+										</article> 
+									</th>
+									<th scope="row">
+										<aura:if isTrue="{!request.NewName__c != null}">
+											<article class="slds-card"> 
+												<div class="slds-card__body"> 
+													<div class="slds-tile slds-tile--board"> 
+														<h3 class="slds-truncate" title="{!request.NewName__c}"> 
+															<a href="javascript:void(0);">{!request.NewName__c}</a> 
+														</h3> 
+														<p class="slds-p-horizontal--small">
+															Account: {!request.NewAccountName__c}
+														</p>
+														<p class="slds-p-horizontal--small">
+															Contact: {!request.NewContactName__c}
+														</p>
+														<p class="slds-p-horizontal--small"> 
+															Priority: {!request.NewPriority__c} 
+														</p> 
+														<p class="slds-p-horizontal--small"> 
+															Phone: {!request.NewPhone__c} 
+														</p> 
+														<p class="slds-p-horizontal--small"> 
+															Status: {!request.NewStatus__c} 
+														</p> 
+														<p class="slds-p-horizontal--small"> 
+															Expiration date: {!request.NewExpirationDate__c} 
+														</p> 
+														<p class="slds-p-horizontal--small"> 
+															Description: {!request.NewDescription__c} 
+														</p> 
+													</div> 
+												</div> 
+											</article> 
+										</aura:if>
+									</th>
+									<th scope="row">
+										<button  class="slds-button slds-button--brand" onclick="{!c.approveAction}" id="{!request.Id}">Approve</button>
+									</th>
+									<th scope="row">
+										<button  class="slds-button slds-button--brand" onclick="{!c.rejectAction}" id="{!request.Id}">Reject</button>
+									</th>
+								</tr>
+							</aura:if>
+						</aura:iteration>
+					</tbody>
+				</table>
+			</div>
+		</aura:if>
+		<aura:if isTrue="{!equals(v.roles[1], v.profile.Name)}"> 
+			<h1>У вас нет прав доступа!!!</h1>
+		</aura:if>
+	</div>
+</aura:component>
