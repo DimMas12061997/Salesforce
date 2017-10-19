@@ -1,0 +1,17 @@
+{
+    "projectName": "onlineShop",
+    "username": "test-d_masalsky@twistellar.com",
+    "id": "54ada4d0-b0fd-11e7-b99d-65a5edaadf90",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://masalsky-dev-ed.my.salesforce.com",
+    "workspace": "C:\\Users\\Дмитрий\\Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}

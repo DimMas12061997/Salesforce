@@ -1,0 +1,165 @@
+<aura:component controller="GoodsController" implements="force:appHostable"> 
+	<aura:handler name="init" value="{!this}" action="{!c.myAction}"/> 
+	<aura:attribute name="goods" type="Goods__c[]"/> 
+	<aura:attribute name="categoryId" type="Id"/> 
+	<aura:attribute name="currentCategory" type="String" default="Все категории"/> 
+	<aura:attribute name="flag" type="boolean"/>
+	<aura:attribute name="categories" type="Category__c[]"/> 
+	<aura:attribute name="arrowDirection" type="String" default="arrowup"/>
+	<aura:attribute name="isAsc" type="boolean" default="true"/> 
+	<aura:attribute name="selectedTabsoft" type="String" default="Name"/>
+	<ltng:require styles="{!$Resource.DragulaCss}" 
+		scripts="{!$Resource.DragulaJs}" 
+		afterScriptsLoaded="{!c.afterDragulaLoaded}" 
+		/> 
+
+		<div style="position:absolute;left:1%;top:15%;width:98%;height:10%;background-color:#2F4F4F;">
+			<h3 id="entity-header" style="float:left;color:gold; font-weight: bold; font-size:2.5em" class="slds-nav-vertical__title slds-text-title_caps">МЕНЮ</h3>
+			<h3 style="position:absolute;left:35%;;color:gold; font-weight: bold; font-size:2.5em" class="slds-nav-vertical__title slds-text-title_caps">{!v.currentCategory}</h3>
+			<div class="slds-grid slds-grid_pull-padded-medium" style="position:absolute;right:3%; top:17%">
+				<div class="slds-p-horizontal_medium">
+					<a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+						<span class="slds-assistive-text">Sort</span>
+						<span title="Name" style="color:gold; font-weight: bold; font-size:1.5em">Цена </span>  
+						<aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'Name') }">&nbsp;  &#9660; </aura:if>  
+						<aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'Name') }"> &nbsp;  &#9650; </aura:if>                        
+					</a>
+				</div>
+				<div class="slds-p-horizontal_medium">
+					<a href="javascript:void(0);" class="slds-th__action slds-text-link--reset">
+						<span class="slds-assistive-text">Sort</span>
+						<span title="Name" style="color:gold; font-weight: bold; font-size:1.5em">Название </span>  
+						<aura:if isTrue="{! and(v.arrowDirection == 'arrowdown', v.selectedTabsoft == 'Name') }">&nbsp;  &#9660; </aura:if>  
+						<aura:if isTrue="{! and(v.arrowDirection != 'arrowdown', v.selectedTabsoft == 'Name') }"> &nbsp;  &#9650; </aura:if>                        
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="demo-only" style="position:absolute;left:1%;top:25%;width:27%;height:65%;background-color:#2F4F4F;"> 
+			<nav class="slds-nav-vertical slds-nav-vertical_shade" aria-label="Sub page"> 
+				<div class="slds-nav-vertical__section"> 
+					<ul> 
+						<li class="slds-nav-vertical__item" ><a href="javascript:void(0);" 
+							name="1" style="color:#FFD700; font-weight: bold" onclick="{!c.selectCategory}" class="slds-nav-vertical__action" aria-describedby="entity-header">Показать все</a></li>
+							<aura:iteration items="{!v.categories}" var="category"> 
+								<li class="slds-nav-vertical__item" ><a href="javascript:void(0);" 
+									name="{!category.Id}" style="color:#FFD700; font-weight: bold" onclick="{!c.selectCategory}" class="slds-nav-vertical__action" aria-describedby="entity-header">{!category.Name}</a></li>
+								</aura:iteration> 
+							</ul> 
+						</div> 
+					</nav> 
+				</div>
+				<div aura:id="container" style="background-color:#2F4F4F; color:black;"> 
+					<ul aura:id="from-draggable" class="from-draggable demo-only demo-only--sizing slds-grid slds-wrap" style="position:absolute;top:25%;left:27%;height:65%;width:72%;background-color:#2F4F4F;">
+						<aura:iteration items="{!v.goods}" var="goods">
+							<aura:if isTrue="{!!v.flag}"> 
+								<div class="slds-size_1-of-3" id="{!goods.Id}">
+									<div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+										<li class="slds-p-around-xx-small">
+											<article class="slds-card"> 
+												<div class="slds-card__body"> 
+													<div class="slds-tile slds-tile--board" >
+														<p class="slds-p-horizontal--small"> 
+															Amount: {!goods.Amount__c} 
+														</p> 
+														<p class="slds-p-horizontal--small"> 
+															Unit Price: {!goods.UnitPrice__c} 
+														</p> 
+														<p class="slds-p-horizontal--small"> 
+															Producer: {!goods.Producer__c} 
+														</p> 
+														<p class="slds-p-horizontal--small"> 
+															Description: {!goods.Description__c} 
+														</p> 
+														<p class="slds-p-horizontal--small"> 
+															Category: {!goods.Category__c} 
+														</p>
+													</div> 
+												</div> 
+												<footer class="slds-card__footer slds-clearfix">
+													<h3 class="slds-truncate slds-float_left" title="{!goods.Name}"> 
+														<a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+															<span class="slds-text-heading_small">{!goods.Name}</span>
+														</a>
+													</h3> 
+													<aura:if isTrue="{!goods.Amount__c > 0}"> <button class="slds-button slds-float_right" onclick="{!c.moveItemUp}">
+														<lightning:icon iconName="utility:shopping_bag" size="medium" alternativeText="Move this item up" />
+													</button>
+												</aura:if>
+												<aura:if isTrue="{!goods.Amount__c == 0}"> 
+													<h3 class="slds-truncate slds-float_right" title="{!goods.Name}"> 
+														<a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+															<span class="slds-text-heading_small">Товара нет на складе</span>
+														</a>
+													</h3> 
+												</aura:if>
+											</footer>
+										</article> 
+									</li>
+								</div>
+							</div>
+						</aura:if> 
+					</aura:iteration>
+				</ul>
+				<ul aura:id="from-draggable" class="from-draggable demo-only demo-only--sizing slds-grid slds-wrap" style="position:absolute;top:25%;left:27%;width:72%;background-color:#2F4F4F;">
+					<aura:iteration items="{!v.goods}" var="goods">
+						<aura:if isTrue="{!and((equals(v.categoryId, goods.Category__c)),equals(v.flag, true))}"> 
+							<div class="slds-size_1-of-3"  id="{!goods.Id}">
+								<div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+									<li class="slds-p-around-xx-small">
+										<article class="slds-card"> 
+											<div class="slds-card__body"> 
+												<div class="slds-tile slds-tile--board" >	
+													<p class="slds-p-horizontal--small"> 
+														Amount: {!goods.Amount__c} 
+													</p> 
+													<p class="slds-p-horizontal--small"> 
+														Unit Price: {!goods.UnitPrice__c} 
+													</p> 
+													<p class="slds-p-horizontal--small"> 
+														Producer: {!goods.Producer__c} 
+													</p> 
+													<p class="slds-p-horizontal--small"> 
+														Description: {!goods.Description__c} 
+													</p> 
+													<p class="slds-p-horizontal--small"> 
+														Category: {!goods.Category__c} 
+													</p>
+												</div> 
+											</div> 
+											<footer class="slds-card__footer slds-clearfix">
+												<h3 class="slds-truncate slds-float_left" title="{!goods.Name}"> 
+													<a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+														<span class="slds-text-heading_small">{!goods.Name}</span>
+													</a>
+												</h3> 
+												<aura:if isTrue="{!goods.Amount__c > 0}"> <button class="slds-button slds-float_right" onclick="{!c.moveItemUp}">
+													<lightning:icon iconName="utility:shopping_bag" size="medium" alternativeText="Move this item up" />
+												</button>
+											</aura:if>
+											<aura:if isTrue="{!goods.Amount__c == 0}"> 
+												<h3 class="slds-truncate slds-float_right" title="{!goods.Name}"> 
+													<a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="[object Object]">
+														<span class="slds-text-heading_small">Товара нет на складе</span>
+													</a>
+												</h3> 
+											</aura:if>
+										</footer>
+									</article> 
+								</li>
+							</div>
+						</div>
+					</aura:if> 
+				</aura:iteration> 
+			</ul> 
+			<div class="slds-panel slds-grid slds-grid--vertical slds-nowrap" style="position:absolute;right:2%;top:1rem;width:10%">
+				<ul aura:id="to-draggable" class="to-draggable">
+					<li class="slds-p-around--xx-small" aura:id="to-placekeeper">
+						<div class="slds-file-selector__dropzone" style="height: 50px; align:center">
+							<span class="slds-file-selector__text" style="position:absolute;top:30%;left:35%">Корзина</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</aura:component>
