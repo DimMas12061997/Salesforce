@@ -1,2 +1,21 @@
-.THIS {
+.THIS .slds-p-vertical_small{
+	background-color: #2F4F4F
 }
+
+.THIS .menuNav{
+	height: 500px;
+}
+
+.THIS .slds-th__action{
+	background-color: #2F4F4F;
+	color:gold;
+	font-weight: bold; 
+	font-size:1.5em;
+}
+
+.THIS .slds-nav-vertical__action:hover{
+	background-color: #D8BFD8
+}
+
+
+

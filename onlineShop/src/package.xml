@@ -3,6 +3,8 @@
 	<types>
 		<members>mainShop</members>
 		<members>menuCmp</members>
+		<members>basketCmp</members>
+		<members>catalogGoodsCmp</members>
 		<name>AuraDefinitionBundle</name>
 	</types>
 	<types>

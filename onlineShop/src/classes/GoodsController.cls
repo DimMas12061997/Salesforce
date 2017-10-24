@@ -3,8 +3,28 @@ public class GoodsController {
 	@AuraEnabled
 	public static List <Goods__c> getAllGoods(){
 		List<Goods__c> goods = [
-		SELECT Id, Name, Amount__c, UnitPrice__c, Producer__c, Description__c, Category__c FROM Goods__c
+		SELECT Id, Name, Amount__c, UnitPrice__c, Producer__c, Description__c, Category__c 
+		FROM Goods__c ORDER BY Name
 		];
+		return goods;
+	}
+
+	@AuraEnabled
+	public static List <Goods__c> sortGoods(String sortField, boolean isAsc){
+		List<Goods__c> goods = new List<Goods__c>();
+		String sSoql = 'SELECT Id, Name, Amount__c, UnitPrice__c, ' +
+		'Producer__c, Description__c, Category__c FROM Goods__c';
+		if (sortField != '') {
+			sSoql += ' ORDER BY ' + sortField;
+			if (isAsc) {
+				sSoql += ' ASC';
+			} 
+			else {
+				sSoql += ' DESC';
+			}
+		}
+		sSoql += ' LIMIT 20';
+		goods = Database.query(sSoql);
 		return goods;
 	}
 
@@ -36,5 +56,6 @@ public class GoodsController {
 		];
 		return category;
 	}
+
 
 }
