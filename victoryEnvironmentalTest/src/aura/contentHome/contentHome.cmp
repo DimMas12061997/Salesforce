@@ -1,0 +1,40 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<ltng:require styles="{!$Resource.cssVictoryEnvironmental}"/>
+	<body>
+		<div id="content" class="site-content">
+			<div class="slds-grid">
+				<div class="slds-col">
+					<div data-vc-full-width="true" data-vc-full-width-init="true" class="vc_row wpb_row vc_row-fluid vc_custom_1500907910560 vc_row-has-fill vc_row-o-content-middle vc_row-flex overlay-enable" style="position: relative; left: 0px; box-sizing: border-box; width: 1519px; padding-left: 0px; padding-right: 0px;">
+						<div class="overlay" style="">
+						</div>
+						<div class="slds-grid">
+							<div class="slds-col">
+								<div class="wpb_column vc_column_container vc_col-sm-12">
+									<div class="vc_column-inner ">
+										<div class="wpb_wrapper">
+											<div class="vc_empty_space" style="height: 32px">
+												<span class="vc_empty_space_inner"></span>
+											</div>
+											<h2 style="font-size: 60px; color: #ffffff; line-height: 68px; text-align: center; font-weight: 700;" class="vc_custom_heading slider_caption vc_custom_1504081361603">
+												YOUR SOLUTION FOR<br></br>
+												PROFESSIONAL<br></br>
+												ENVIRONMENTAL<br></br>
+												SERVICES
+											</h2>
+											<div class="vc_empty_space" style="height: 32px">
+												<span class="vc_empty_space_inner"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="vc_row-full-width vc_clearfix"></div>
+				</div>
+
+
+			</div>
+		</div>
+	</body>
+</aura:component>

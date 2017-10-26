@@ -1,0 +1,42 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<ltng:require styles="{!$Resource.cssVictoryEnvironmental}"/>
+	<body>
+		<c:footerWidgets/>
+		<a id="scroll-top" class="backtotop show-scroll" href="#page-top">
+			<i class="fa fa-angle-up"></i>
+		</a>
+		<footer id="colophon" class="site-footer">
+			<div class="slds-grid slds-grid_align-space">
+				<div class="footer-copyright ">
+					<div class="site-info">
+						Copyright 2017 - Victory Environmental, Inc.
+					</div>
+				</div>
+				<div class="footer-text slds-text-align_right">
+					VICTORY ENVIRONMENTAL, INC.(866) 606-6107 
+					<p>
+						<a href="mailto:info@victory-environmental.com" class="site-email  slds-text-link--reset">
+							<span>info@victory-environmental.com</span>
+						</a>
+					</p>
+					<br>
+					</br>
+					<p>
+						<a href="http://victoryenviro.wpengine.com/privacy-policy/" target="_blank" class=" slds-text-link--reset">Privacy Policy</a>
+					</p>
+					<p>
+						<a href="http://victoryenviro.wpengine.com/terms-and-conditions/" target="_blank" class=" slds-text-link--reset">Terms &amp; Conditions
+						</a>
+					</p>
+					<p>
+						<a href="https://victory-environmental.com/security-policy/" target="_blank" class=" slds-text-link--reset">Security Policy
+						</a>
+					</p>
+					<p>
+					</p>
+				</div>
+			</div>
+			<!-- </div> -->
+		</footer>
+	</body>
+</aura:component>

@@ -1,0 +1,29 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <div class="header-main" style="width: 100%; position: fixed; top: 0; bottom: auto;">
+        <div class="slds-grid">
+        <div class="container"><div class="row">
+        <div class="site-logo col-md-3 col-sm-6 col-xs-6">
+            <a href="https://victory-environmental.com/" class="logo">
+                <img src="./Leading Hazardous Waste Removal Company Across the U.S._files/ba4d6527-negative-logo_052027050021000002.png" alt="Victory Environmental" class="logo-light hide-logo"/>
+                <img src="./Leading Hazardous Waste Removal Company Across the U.S._files/ba4d6527-negative-logo_052027050021000002.png" alt="Victory Environmental" class="logo-dark show-logo"/>
+            </a>
+            <div class="site-menu col-md-9 col-sm-6 col-xs-6"><div class="navbar-toggle toggle-navs">
+                <a href="https://victory-environmental.com/#" class="navbars-icon">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </a></div>
+                <nav id="site-navigation" class="main-nav primary-nav nav"><ul id="primary-menu" class="menu">
+                    <li id="menu-item-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-43 current_page_item menu-item-45">
+                        <a href="https://victory-environmental.com/">Home</a></li>
+                    <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38">
+                        <a href="https://victory-environmental.com/services/">Services</a></li>
+                    <li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37">
+                        <a href="https://victory-environmental.com/service-area/">Service Area</a></li>
+                    <li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
+                        <a href="https://victory-environmental.com/articles/">Articles</a></li>
+                    <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33">
+                        <a href="https://victory-environmental.com/about/">About</a></li><li class="extra-menu-item menu-item-button-link">
+                    <a href="http://victoryenviro.wpengine.com/contact/" class="fp-btn btn">Contact Us</a></li></ul>	
+                    
+                </nav></div></div></div></div></div>
+    </div>
+</aura:component>

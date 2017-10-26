@@ -1,0 +1,119 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+	<ltng:require styles="{!$Resource.cssVictoryEnvironmental}"/>
+	<footer class="entry-footer">
+	</footer>
+	<div id="footer-widgets" class="footer-widgets widgets-area">
+		<div class="footer-sidebars">
+			<div  class="slds-grid slds-grid_pull-padded-medium">
+				<div class="footer-sidebar footer-1 slds-col slds-p-horizontal_medium slds-m-left_xx-large">
+					<div id="nav_menu-2" class="widget widget_nav_menu">
+						<h4 class="widget-title ">Menu</h4>
+						<div class="menu-menu-1-container">
+							<ul id="menu-menu-1" class="menu">
+								<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-45">
+									<a href="https://victory-environmental.com/" class="slds-text-link--reset">Home</a>
+								</li>
+								<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38">
+									<a href="https://victory-environmental.com/services/" class="slds-text-link--reset">Services</a>
+								</li>
+								<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-28 current_page_item menu-item-37"><a href="https://victory-environmental.com/service-area/" class="slds-text-link--reset">Service Area</a>
+							</li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
+								<a href="https://victory-environmental.com/articles/" class="slds-text-link--reset">Articles</a>
+							</li>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33">
+								<a href="https://victory-environmental.com/about/" class="slds-text-link--reset">About</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-sidebar footer-2 slds-col slds-p-horizontal_medium">
+				<div id="popular-posts-widget-2" class="widget popular-posts-widget">
+					<h4 class="widget-title">Recent Articles</h4>
+					<div class="popular-post post clearfix ">
+						<a class="widget-thumb slds-text-link--reset" href="https://victory-environmental.com/articles/5-things-consider-choosing-hazardous-waste-disposal-company/" title="5 Things to Consider When Choosing a Hazardous Waste Disposal Company">
+							<img src="https://victory-environmental.com/wp-content/uploads/2016/12/drum-80x80.jpg" alt="5 Things to Consider When Choosing a Hazardous Waste Disposal Company"></img></a>
+							<div class="mini-widget-title">
+								<!-- <h4> -->
+								<a href="https://victory-environmental.com/articles/5-things-consider-choosing-hazardous-waste-disposal-company/" class="slds-text-link--reset textwidget">
+									<p>5 Things to Consider</p>
+									<p>When Choosing a</p>
+									<p> Hazardous Waste</p>
+									<p>Disposal Company</p></a>
+									<!-- </h4> -->
+									<span>by
+										<a class="widget-author slds-text-link--reset" href="https://victory-environmental.com/articles/author/jolie-hope/">Jolie Hope</a>
+									</span>
+								</div>
+							</div>
+							<div class="popular-post post clearfix ">
+								<div class="mini-widget-title">
+									<!-- <h4> -->
+									<a href="https://victory-environmental.com/articles/hazardous-waste-disposal-expectations-vs-reality/" class="slds-text-link--reset textwidget">
+										<p>Hazardous Waste </p>
+										<p>Disposal: </p>
+										<p>Expectations vs. </p>
+										<p>Reality</p></a>
+										<!-- </h4> -->
+										<span>by<a class="widget-author slds-text-link--reset" href="https://victory-environmental.com/articles/author/jolie-hope/">Jolie Hope</a></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer-sidebar footer-3 slds-col slds-p-horizontal_medium">
+							<div id="social-icons-widget-2" class="widget social-icons-widget">
+								<h4 class="widget-title">Follow Us</h4>
+								<ul class="icons-medium">
+									<li class="facebook">
+										<a href="https://www.facebook.com/victoryenvironmental/" class="  slds-text-link--reset" target="_blank">
+											<img class="site-icon" src="https://victory-environmental.com/wp-content/plugins/social-media-icons-widget/icons/medium/facebook.jpg" alt="Facebook" title="Facebook" height="32" width="32"></img>
+										</a>
+									</li>
+									<li class="googleplus">
+										<a href="https://plus.google.com/100349196457133497925" class="  slds-text-link--reset" target="_blank">
+											<img class="site-icon" src="https://victory-environmental.com/wp-content/plugins/social-media-icons-widget/icons/medium/googleplus.jpg" alt="Google+" title="Google+" height="32" width="32"></img>
+										</a>
+									</li>
+									<li class="linkedin">
+										<a href="https://www.linkedin.com/company-beta/15255723/" class="  slds-text-link--reset" target="_blank">
+											<img class="site-icon" src="https://victory-environmental.com/wp-content/plugins/social-media-icons-widget/icons/medium/linkedin.jpg" alt="LinkedIn" title="LinkedIn" height="32" width="32"></img>
+										</a>
+									</li>
+									<li class="twitter">
+										<a href="https://twitter.com/victoryenviro" class="  slds-text-link--reset" target="_blank">
+											<img class="site-icon" src="https://victory-environmental.com/wp-content/plugins/social-media-icons-widget/icons/medium/twitter.jpg" alt="Twitter" title="Twitter" height="32" width="32"></img>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer-sidebar footer-4 slds-col slds-p-horizontal_medium">
+							<div id="text-2" class="widget widget_text">
+								<h4 class="widget-title">Contact Us</h4>
+								<div class="textwidget">
+									<p>
+										<i class="fa fa-map-marker" aria-hidden="true"></i> 
+										Victory Environmental, Inc.
+										<p>321 North Clark Street</p>
+										<p>Suite 500</p>
+										<p>Chicago, Illinois 60654</p>
+										<p>(866) 303-8950</p>
+										<br></br>
+										<i class="fa fa-envelope" aria-hidden="true"></i>
+										<a href="mailto:info@victory-environmental.com">info@victory-environmental.com</a>
+									</p>
+									<br></br>
+								</div>
+							</div>
+							<div id="media_image-2" class="widget widget_media_image">
+								<div style="width: 135px" class="wp-caption alignnone">
+									<img width="125" height="78" src="https://victory-environmental.com/wp-content/uploads/2017/07/Badge_2.png" class="image wp-image-207  attachment-full size-full" alt="snow plowing &amp; leaf removal" style="max-width: 100%; height: auto;"></img>
+									<p class="wp-caption-text">snow plowing services</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</aura:component>
