@@ -1,0 +1,30 @@
+<aura:component controller="GoodsController" implements="force:appHostable"> 
+
+	<div aura:id="container" class="slds-grid slds-wrap slds-grid_pull-padded slds-m-top_medium slds-m-left_xx-large slds-m-right_xx-large slds-m-bottom_medium">
+		<div class=" slds-p-vertical_small slds-p-horizontal_small slds-size_1-of-1 slds-align_absolute-center">
+			<a href="javascript:void(0);" class="slds-th__action slds-nav-vertical__title slds-text-link--reset slds-m-left_medium" id="entity-header">МАГАЗИН СПОРТИВНОГО ПИТАНИЯ EXPERT
+			</a>
+		</div>
+		<div class="slds-p-vertical_small slds-p-horizontal_small slds-p-horizontal_small slds-size_1-of-1">
+			<ui:scrollerWrapper class="scrollerSize">
+				<a href="javascript:void(0);" class="slds-th__action slds-nav-vertical__title slds-text-link--reset slds-m-left_medium">ДОБРО ПОЖАЛОВАТЬ НА САЙТ SPORT-PITANIE.BY</a>
+				<div class="about content">
+					<p><span>Мы являемся официальными представителями крупнейших мировых брендов спортивного питания на рынке Республики Беларусь. Именно у нас вы сможете найти широчайший спектр продуктов для питания спортсменов и людей, ведущих здоровый активный образ жизни. Вживую наш ассортимент можно изучить в наших магазинах по адресам:&nbsp;<span>пр-т. Независимости, 93/2 комн. 2А-Б&nbsp;<span>(ст.м. Парк Челюскинцев)</span></span>&nbsp;&nbsp;<span>пр-т. Дзержинского 9-29&nbsp;</span>&nbsp;(ст.м. Грушевка)&nbsp;&nbsp;пр-т. Партизанский 150А, 1 этаж ТЦ МОМО (ст.м. Могилевская)</span><span>&nbsp;пр-т. Строителей 1, 1й этаж, павильон 116 ТЦ КОНТИНЕНТ (г. Витебск)В</span><span style="line-height: 1.5;">ам всегда будут рады помочь советом и консультацией по поводу тех или иных вопросов, связанных со спортивным питанием.&nbsp;</span></p>
+					<p><span></span><b style="line-height: 1.5;"><br></br>Наши магазины - это:</b></p><br></br>
+					<ul type="square">
+						<li>Удобное расположение у станций метро.</li>
+						<li> - 20 метров от ст. метро "Парк Челюскинцев"<p>  - 700 метров от ст. метро "Грушевка"</p><p> - 10 метров от ст.м. "Могилевская".</p></li>
+						<li>Большой выбор спортивного питания.</li>
+						<li>Индивидуальный подход к каждому клиенту, консультация.</li>
+						<li>Привлекательные цены.&nbsp;</li>
+					</ul>
+					<br></br>
+					<p><span style="color: #ffcc00; font-size: 1.4em" class="slds-align_absolute-center"><strong>Обращаясь к нам, вы обращаетесь к профессионалам - сделайте правильный выбор!</strong></span></p>
+					<p></p><br></br>
+					<p style="padding: 10px 0 0 0;" class="slds-align_absolute-center"><img src="{!$Resource.descriptionShop}" width="700" height="292"></img></p>
+					<br></br>
+				</div>
+			</ui:scrollerWrapper>
+		</div>
+	</div>
+</aura:component>

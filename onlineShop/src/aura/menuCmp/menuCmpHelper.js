@@ -22,7 +22,7 @@
 	},
 
 	updateAmountOfGoodsHelper: function(component, idGoods){
-		var showToast = this;
+		var currentHelper = this;
 		var goods = component.get("v.goods");
 		var action = component.get("c.updateAmountOfGoods");
 		action.setParams({
@@ -32,13 +32,13 @@
 			var state = response.getState();
 			if (state === "SUCCESS") {
 				for(var j = 0; j < goods.length; j++)
-					if(response.getReturnValue().Id == goods[j].Id) {
-						if(response.getReturnValue().Amount__c != 0) {
-							goods[j] = response.getReturnValue();
+					if(response.getReturnValue()[0].Id == goods[j].Id) { 
+						if(response.getReturnValue()[0].Amount__c != goods[j].Amount__c){
+							goods[j] = response.getReturnValue()[0];
 							component.set("v.goods", goods);
 						}
 						else{
-							showToast.showToastError(component, event, 'Товара на складе больше нет!');
+							currentHelper.showToastError(component, event, 'Товара на складе больше нет!');
 						}
 					}
 
@@ -68,29 +68,12 @@
 		toast.fire();
 	},
 
-	getNameCategoryById: function(component, categoryId){
-		var action = component.get("c.getNameCategoryById");
-		action.setParams({
-			"categoryId": categoryId,
-		});
-		action.setCallback(this, function(response){ 
-			var state = response.getState();
-			if (state === "SUCCESS") {
-				component.set("v.currentCategory", response.getReturnValue().Name);
-			}
-		});
-		$A.enqueueAction(action);    
-	},
-
 	sortHelper: function(component, event, sortFieldName) {
 		var currentDir = component.get("v.arrowDirection");
-		console.log("1 = " + currentDir);
 		if (currentDir == 'arrowdown') {
-			console.log("11 = " + currentDir);
 			component.set("v.arrowDirection", 'arrowup');
 			component.set("v.isAsc", true);
 		} else {
-			console.log("12 = " + currentDir);
 			component.set("v.arrowDirection", 'arrowdown');
 			component.set("v.isAsc", false);
 		}

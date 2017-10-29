@@ -1,0 +1,5 @@
+<aura:event type="COMPONENT">
+	<aura:attribute name="currentCategory" type="String"/>
+	<aura:attribute name="flag" type="boolean"/>
+	<aura:attribute name="categoryId" type="Id"/> 
+</aura:event>

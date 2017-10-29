@@ -1,0 +1,26 @@
+<aura:component controller="GoodsController">
+	<aura:attribute name="currentCategory" type="String"/>
+	<aura:attribute name="flag" type="boolean"/>
+	<aura:attribute name="categoryId" type="Id"/> 
+	<aura:registerEvent name="componentEventFired" type="c:navMenuEvent"/>
+	<aura:attribute name="categories" type="Category__c[]"/> 
+	<aura:handler name="init" value="{!this}" action="{!c.myAction}"/> 
+
+
+	<nav class="slds-nav-vertical slds-nav-vertical_shade" aria-label="Sub page"> 
+		<div class="slds-nav-vertical__section"> 
+			<ul> 
+				<li class="slds-nav-vertical__item" > 
+					<a href="javascript:void(0);" 
+						name= "1" id="1" style="color:#FFD700; font-weight: bold" onclick="{!c.selectCategory}" class="slds-nav-vertical__action" aria-describedby="entity-header">Показать все</a> 
+					</li> 
+					<aura:iteration items="{!v.categories}" var="category"> 
+						<li class="slds-nav-vertical__item" > 
+							<a href="javascript:void(0);" 
+								name="{!category.Name}" id="{!category.Id}" style="color:#FFD700; font-weight: bold" onclick="{!c.selectCategory}" class="slds-nav-vertical__action" aria-describedby="entity-header">{!category.Name}</a> 
+							</li> 
+						</aura:iteration> 
+					</ul> 
+				</div> 
+			</nav> 
+		</aura:component>

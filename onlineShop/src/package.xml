@@ -5,6 +5,11 @@
 		<members>menuCmp</members>
 		<members>basketCmp</members>
 		<members>catalogGoodsCmp</members>
+		<members>shopDescription</members>
+		<members>contactsCmp</members>
+		<members>navMenuEvent</members>
+		<members>navMenuCmp</members>
+		<members>goodsDescriptionCmp</members>
 		<name>AuraDefinitionBundle</name>
 	</types>
 	<types>

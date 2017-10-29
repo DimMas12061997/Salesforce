@@ -3,7 +3,7 @@ public class GoodsController {
 	@AuraEnabled
 	public static List <Goods__c> getAllGoods(){
 		List<Goods__c> goods = [
-		SELECT Id, Name, Amount__c, UnitPrice__c, Producer__c, Description__c, Category__c 
+		SELECT Id, Name, Amount__c, UnitPrice__c, Producer__c, Image__c, Description__c, Category__c 
 		FROM Goods__c ORDER BY Name
 		];
 		return goods;
@@ -13,7 +13,7 @@ public class GoodsController {
 	public static List <Goods__c> sortGoods(String sortField, boolean isAsc){
 		List<Goods__c> goods = new List<Goods__c>();
 		String sSoql = 'SELECT Id, Name, Amount__c, UnitPrice__c, ' +
-		'Producer__c, Description__c, Category__c FROM Goods__c';
+		'Producer__c, Image__c, Description__c, Category__c FROM Goods__c';
 		if (sortField != '') {
 			sSoql += ' ORDER BY ' + sortField;
 			if (isAsc) {
@@ -37,17 +37,28 @@ public class GoodsController {
 	}
 
 	@AuraEnabled
-	public static Goods__c updateAmountOfGoods(Id goodsId){
-		Goods__c goods = [
-		SELECT Id, Name, Amount__c, UnitPrice__c, Producer__c, Description__c, Category__c 
+	public static List<Goods__c> updateAmountOfGoods(Id goodsId){
+		List<Goods__c> goods = [
+		SELECT Id, Name, Amount__c, UnitPrice__c, Description__c, Producer__c, Image__c, Category__c 
 		FROM Goods__c WHERE Id = :goodsId LIMIT 1
 		];
-		if(goods.Amount__c > 0){
-			goods.Amount__c = goods.Amount__c - 1;
-			update(goods);
+		if(goods.get(0).Amount__c > 0){
+			goods.get(0).Amount__c = goods.get(0).Amount__c - 1;
+			update(goods.get(0));
 		}
 		return goods;
 	}
+
+	@AuraEnabled
+	public static List<Goods__c> getGoodsById(Id goodsId){
+		List<Goods__c> goods = [
+		SELECT Id, Name, Amount__c, UnitPrice__c, Producer__c, Description__c, Image__c, 
+		Category__c, Category__r.Name 
+		FROM Goods__c WHERE Id = :goodsId LIMIT 1
+		];
+		return goods;
+	}
+
 
 	@AuraEnabled
 	public static Category__c getNameCategoryById(Id categoryId){

@@ -1,45 +1,15 @@
 ({
 	myAction : function(component, event, helper) {
 		helper.getAllGoodsHelper(component);
-		helper.getAllCategoriesHelper(component);
 	},
 
-	addGoodsToBasket : function(component, event, helper) {
-		var goods = component.get("v.goods");
-		var goodsId = event.currentTarget.id;
-		var action = component.get("c.updateAmountOfGoods");
-		action.setParams({
-			"goodsId": goodsId,
-		});
-		action.setCallback(this, function(response){
-			if (response.getState() === "SUCCESS") {
-				for(var j = 0; j < goods.length; j++)
-					if(response.getReturnValue().Id == goods[j].Id) {
-						if(response.getReturnValue().Amount__c != 0) {
-							goods[j] = response.getReturnValue();
-							component.set("v.goods", goods);
-							helper.showToastBasket(component, event, 'Товар "' + goods[j].Name + '" успешно добавлен в корзину');
-						}
-						else {
-							showToast.showToastError(component, event, 'Товара на складе больше нет!');
-						}
-					}
-				}
-			});
-		$A.enqueueAction(action);
-	},
-
-	selectCategory : function(component, event, helper) {
-		var categoryId = event.target.name;
-		if(categoryId == 1) {
-			component.set("v.currentCategory", 'Все категории');
-			component.set("v.flag", false);			
-		}
-		else {
-			helper.getNameCategoryById(component, categoryId);
-			component.set("v.flag", true);			
-		}
-		component.set("v.categoryId", categoryId);		
+	handleNavMenuEvent : function(component, event) {
+		var currentCategory = event.getParam("currentCategory");
+		var flag = event.getParam("flag");
+		var categoryId = event.getParam("categoryId");
+		component.set("v.currentCategory", currentCategory);
+		component.set("v.flag", flag);
+		component.set("v.categoryId", categoryId);
 	},
 
 	afterDragulaLoaded: function(component, event, helper) {
@@ -63,6 +33,22 @@
 				helper.updateAmountOfGoodsHelper(component, el.id);
 			}
 		}));
+	},
+
+	addGoodsToBasket : function(component, event, helper) {
+		helper.updateAmountOfGoodsHelper(component, event.currentTarget.id);
+	},
+
+	showDescriptionProduct : function(component, event, helper) {
+		var goodsId = event.currentTarget.id;
+		var evt = $A.get("e.force:navigateToComponent");
+		evt.setParams({
+			componentDef: "c:goodsDescriptionCmp",
+			componentAttributes: {
+				goodsId : goodsId
+			}
+		});
+		evt.fire();  
 	},
 
 	sortName: function(component, event, helper) {   
