@@ -2,7 +2,7 @@
 
 	<div aura:id="container" class="slds-grid slds-wrap slds-grid_pull-padded slds-m-top_medium slds-m-left_xx-large slds-m-right_xx-large slds-m-bottom_medium">
 		<div class=" slds-p-vertical_small slds-p-horizontal_small slds-size_1-of-1 slds-align_absolute-center">
-			<a href="javascript:void(0);" class="slds-th__action slds-nav-vertical__title slds-text-link--reset slds-m-left_medium" id="entity-header">МАГАЗИН СПОРТИВНОГО ПИТАНИЯ EXPERT
+			<a href="javascript:void(0);" class="slds-th__action slds-nav-vertical__title slds-text-link--reset slds-m-left_medium" id="entity-header">МАГАЗИН СПОРТИВНОГО ПИТАНИЯ PROSRORT
 			</a>
 		</div>
 		<div class="slds-p-vertical_small slds-p-horizontal_small slds-p-horizontal_small slds-size_1-of-1">

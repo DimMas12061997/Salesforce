@@ -1,2 +1,39 @@
-.THIS {
+.THIS .slds-p-vertical_small{
+	background-color: #2F4F4F
 }
+
+.THIS .menuNav{
+	height: 200px;
+}
+
+
+.THIS #backCatalog{
+	color:#FFD700; 
+	font-weight: bold;
+}
+
+.THIS .slds-th__action{
+	background-color: #2F4F4F;
+	color:gold;
+	font-weight: bold; 
+	font-size: 1.5em;
+}
+
+.THIS .slds-nav-vertical__action:hover{
+	background-color: #D8BFD8
+}
+
+.THIS .voidDiv{
+	height: 400px;
+}
+
+.THIS .content{
+	font: 14px OS;
+	font-size: 1.3em;
+	color: #e4e4e4;
+}
+
+.THIS .about{
+	padding: 10px 10px 0 23px;
+}
+

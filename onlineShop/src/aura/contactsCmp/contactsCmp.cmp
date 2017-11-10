@@ -1,3 +1,35 @@
-<aura:component  implements="force:appHostable">
+<aura:component controller="GoodsController" implements="force:appHostable"> 
 	
+	<div aura:id="container" class="slds-grid slds-wrap slds-grid_pull-padded slds-m-top_medium slds-m-left_xx-large slds-m-right_xx-large slds-m-bottom_medium">
+		<div class=" slds-p-vertical_small slds-p-horizontal_small slds-size_1-of-1 slds-align_absolute-center">
+			<a href="javascript:void(0);" class="slds-th__action slds-nav-vertical__title slds-text-link--reset ">Контакты
+			</a>
+		</div>
+		<div class="slds-p-vertical_small slds-p-horizontal_small slds-p-horizontal_small slds-size_1-of-1">
+			<a href="javascript:void(0);" class="slds-th__action slds-nav-vertical__title slds-text-link--reset slds-m-left_medium">ООО "Проспорт"</a>
+			<div class="about content">
+				<br></br>
+				<p>ООО "Проспорт" </p>
+				<p>Свидетельство о регистрации № 191324235 выдано 16 марта 2010 г. </p>
+				<p>Администрацией Первомайского р-на г. Минска </p>
+				<p>Контактный телефон (8017) 280-36-70, (8017) 281-61-69 </p>
+				<p>Адрес для почтовых отправлений: 220012, г. Минск, пр. Независимости, 93, п. 2, ком. 2Б. </p>
+				<br></br>
+				<a href="javascript:void(0);" class="slds-th__action slds-nav-vertical__title slds-text-link--reset slds-m-left_medium">Адрес магазина:</a>
+				<br></br>
+				<p>г. Минск </p>
+				<p>пр-т. Независимости 93/2 комн.2А-Б </p>
+				<p>	(ст.м. Парк Челюскинцев)</p>
+				<p>тел. 8-044-714-29-49 velcom </p>
+				<p>8-017-281-61-69 </p>
+				<p>8-017-280-36-70 факс </p>
+				<p>время работы: </p>
+				<p>пн.-пят. - 10.00-21.00 </p>
+				<p>суббота - 10.00-18.00 </p>
+				<p>воскресенье - 10.00 - 17.00</p>
+				<br></br>
+				<a href="javascript:void(0);" onclick="{!c.showMap}" style="color: gold" class="content slds-text-link--reset">Показать на карте</a>
+			</div>
+		</div>
+	</div>
 </aura:component>

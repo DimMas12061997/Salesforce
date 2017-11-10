@@ -30,12 +30,14 @@
 		});
 		action.setCallback(this, function(response){ 
 			var state = response.getState();
+			console.log(response.getState());
 			if (state === "SUCCESS") {
 				for(var j = 0; j < goods.length; j++)
 					if(response.getReturnValue()[0].Id == goods[j].Id) { 
 						if(response.getReturnValue()[0].Amount__c != goods[j].Amount__c){
 							goods[j] = response.getReturnValue()[0];
 							component.set("v.goods", goods);
+							currentHelper.showToastBasket(component, event, 'Товар "' + goods[j].Name + '" успешно добавлен в корзину!');
 						}
 						else{
 							currentHelper.showToastError(component, event, 'Товара на складе больше нет!');
@@ -61,9 +63,9 @@
 	showToastBasket : function(component, event, message) {
 		var toast = $A.get("e.force:showToast");
 		toast.setParams({
-			"title": "Succes!",
+			"title": "Success!",
 			"message": message,
-			"type": 'succes',
+			"type": 'success',
 		});
 		toast.fire();
 	},

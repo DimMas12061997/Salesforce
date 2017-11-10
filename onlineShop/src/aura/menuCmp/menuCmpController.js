@@ -23,7 +23,7 @@
 		var drake = dragula(dragulaConteiners, {
 			mirrorContainer: container.getElement(),
 			revertOnSpill: true,
-			// copy: true
+			 // copy: true
 		});
 		drake.containers.push(to.getElement());
 

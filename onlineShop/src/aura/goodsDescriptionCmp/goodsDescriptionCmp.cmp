@@ -22,18 +22,16 @@
 			<span class="contentPrice">Цена: {!v.currentGoods.UnitPrice__c} $</span> 
 			<br></br><br></br>
 			<div class="quantity-block-wrapper">
-				<button aria-pressed="false" class="slds-m-top_xx-small" onclick="{!c.plusAmount}">
-					<lightning:icon iconName="utility:chevronup" size="medium"  />
-				</button>
+				<a class="slds-text-link--reset" onclick="{!c.plusAmount}">	
+				<lightning:icon iconName="utility:chevronup" size="medium"/></a>
 				<span class="quantity-box">
 					<input aura:id="quantity" class="quantity-input slds-m-left_small" value="{!v.currentAmount}"></input>
 				</span>
-				<button aria-pressed="false" class="slds-m-top_xx-small" onclick="{!c.minusAmount}">
-					<lightning:icon iconName="utility:chevrondown" size="medium" />
-				</button>
-			</div>
+				<a class="slds-text-link--reset" onclick="{!c.minusAmount}">
+				<lightning:icon iconName="utility:chevrondown" size="medium" /></a>
+				</div>
 			 <br></br><br></br>
-			<button class="slds-p-around_x-small btn btn_type_flat">
+			<button class="slds-p-around_x-small btn btn_type_flat" onclick="{!c.addGoodsToBasket}">
 				В корзину
 			</button>
 			<br></br><br></br>
@@ -43,7 +41,7 @@
 			<br></br>
 			<span class="slds-m-left_xx-large nameGoodsFont">ОПИСАНИЕ:</span>
 			 <br></br><br></br>
-			<span class="content slds-m-left_xx-large">{!v.currentGoods.Description__c}</span>
+			 <ui:outputRichText class=" content slds-m-left_xx-large  slds-p-bottom_large" value="{!v.currentGoods.Description__c}"/>
 		</div>
 	</div>
 

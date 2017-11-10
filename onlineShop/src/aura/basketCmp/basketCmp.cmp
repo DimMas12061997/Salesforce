@@ -1,4 +1,70 @@
-<aura:component implements="force:appHostable">
+<aura:component  controller="GoodsController" implements="force:appHostable"> 
+	<aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+	<aura:attribute name="goods" type="Goods__c[]"/>
+	<aura:attribute name="order" type="Order__c"/> 
 
-	
+
+	<div aura:id="container" class="slds-grid slds-wrap slds-grid_pull-padded slds-m-top_medium slds-m-left_xx-large slds-m-right_xx-large slds-m-bottom_medium">
+		<div class=" slds-p-vertical_small slds-p-horizontal_small slds-size_1-of-1 slds-align_absolute-center">
+			<span class="nameGoodsFont">Оформление заказа
+			</span>
+		</div>
+
+		<div class="slds-p-vertical_small slds-wraps-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1 slds-p-around_large">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">
+							<div class="slds-th__action">Изображение</div>
+						</th>
+						<th scope="col">
+							<div class="slds-th__action">Название</div>
+						</th>
+						<th scope="col">
+							<div class="slds-th__action">Количество</div>
+						</th>
+						<th scope="col">
+							<div class="slds-th__action">Цена за шт.</div>
+						</th>
+						<th scope="col">
+							<div class="slds-th__action">Удалить</div>
+						</th>
+					</tr>
+				</thead>
+				<aura:iteration items="{!v.goods}" var="product">  
+					<tr>
+						<th scope="row" class="about content">
+							image
+						</th>
+						<th scope="row" class="about content">
+							{!product.Name}
+						</th>
+						<th scope="row">
+							<div class="quantity-block-wrapper">
+								<a class="slds-text-link--reset" name="{!product.Amount__c}" id="{!product.Id}" onclick="{!c.plusAmount}">	
+									<lightning:icon iconName="utility:chevronup" size="medium"/>
+								</a>
+								<span class="quantity-input quantity-box slds-p-left_medium slds-p-right_medium">
+									{!product.Amount__c}
+								</span>
+								<a class="slds-text-link--reset" name="{!product.Amount__c}" id="{!product.Id}" onclick="{!c.minusAmount}">
+									<lightning:icon iconName="utility:chevrondown" size="medium" />
+								</a>
+							</div>
+						</th>
+						<th scope="row" class="slds-p-left_xx-large about content">
+							{!product.UnitPrice__c}
+						</th>
+						<th scope="row" class="slds-p-left_medium">
+							<a class="slds-text-link--reset" id="{!product.Id}" onclick="{!c.deleteProductFromOrder}"><lightning:icon iconName="action:reject" size="small" /></a>
+						</th>
+					</tr>
+				</aura:iteration>
+			</table>
+		</div>
+		<div class="slds-p-vertical_small slds-wraps-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+			<div class="slds-th__action" style="margin-left: 60%">Итого:  {!v.order.OrderCost__c} $</div>
+		</div>
+	</div>
+
 </aura:component>
