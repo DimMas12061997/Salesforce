@@ -94,3 +94,89 @@
 .THIS .sizeDescriptionGoods{
 	height: 350px;
 }
+
+.THIS .simple-content h3 {
+	font-size: 26px;
+}
+
+.THIS .labelRadioButton{
+	color: white;
+	font-weight: bold; 
+	font-size: 1em;
+}
+
+.THIS a.labelRadioButton:active {
+	color:gold;
+}
+
+.THIS .comments-title {
+	text-transform: uppercase;
+	font-size: 26px;
+	font-weight: 700;
+	margin: 0 0 20px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.THIS .comment-reply-title {
+	text-transform: uppercase;
+	font-size: 26px;
+	font-weight: 700;
+	margin: 0 0 20px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+
+.THIS .submitComment{
+	color: black !important;
+	font-weight: bold;
+	font-size: 14px !important;
+	font-family: 'Montserrat', sans-serif !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	background-color: #fac012 !important;
+	text-transform: uppercase !important;
+	min-width: 170px !important;
+	min-height: 50px !important;
+	line-height: 50px !important;
+	text-align: center !important;
+	border-radius: 12px !important;
+	background: #fac012 !important;
+}
+
+.THIS .textArea{
+	border: 2px solid #d4d0ba !important;
+	border-color: #f7f7f7 !important;
+	padding: 10px 15px !important;
+	border-radius: 12px !important;
+}
+
+.THIS .inputComment{
+	border-radius: 12px !important;
+	border-color: #f7f7f7;
+}
+
+
+.THIS span.wpcf7-not-valid-tip {
+	color: #f00;
+	font-size: 1em;
+	font-weight: normal;
+	display: block;
+}
+
+.THIS div.wpcf7-validation-errors {
+	border: 2px solid #f7e700;
+	color: gold;
+}
+
+.THIS div.wpcf7-mail-sent-ok {
+	border: 2px solid #398f14;
+	color: gold;
+}
+
+.THIS div.wpcf7-response-output {
+	margin: 2em 0.5em 1em;
+	padding: 0.2em 1em;
+}
+

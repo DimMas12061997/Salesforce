@@ -2,9 +2,13 @@
 	<aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
 	<aura:attribute name="goods" type="Goods__c[]"/>
 	<aura:attribute name="order" type="Order__c"/> 
+	<aura:attribute name="formResult" type="String"/>
+	<aura:attribute name="summaryCost" type="Decimal"/>
+	<aura:attribute name="delivery" type="String" default="Самовывоз из магазина 0.00 руб."/>
+	<ltng:require scripts="/resource/jquery224" />
 
 
-	<div aura:id="container" class="slds-grid slds-wrap slds-grid_pull-padded slds-m-top_medium slds-m-left_xx-large slds-m-right_xx-large slds-m-bottom_medium">
+	<div aura:id="container" class="slds-grid slds-wrap slds-grid_pull-padded slds-m-top_medium slds-m-left_xx-large slds-m-right_xx-large slds-m-bottom_medium" >
 		<div class=" slds-p-vertical_small slds-p-horizontal_small slds-size_1-of-1 slds-align_absolute-center">
 			<span class="nameGoodsFont">Оформление заказа
 			</span>
@@ -34,7 +38,7 @@
 				<aura:iteration items="{!v.goods}" var="product">  
 					<tr>
 						<th scope="row" class="about content">
-							image
+							<ui:outputRichText value="{!product.SmallImage__c}"/>
 						</th>
 						<th scope="row" class="about content">
 							{!product.Name}
@@ -63,7 +67,78 @@
 			</table>
 		</div>
 		<div class="slds-p-vertical_small slds-wraps-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
-			<div class="slds-th__action" style="margin-left: 60%">Итого:  {!v.order.OrderCost__c} $</div>
+			<div class="slds-th__action" style="margin-left: 70%">Сумма:  {!v.order.OrderCost__c} р.</div>
+		</div>
+		<div class="slds-p-vertical_small slds-wraps-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+			<div class="slds-th__action" style="margin-left: 70%">Доставка: {!v.delivery} </div>
+		</div>
+		<div class="slds-p-vertical_small slds-wraps-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+			<div class="slds-th__action" style="margin-left: 70%">Итого: {!v.summaryCost} р. </div>
+		</div>
+		<div class="slds-p-vertical_small slds-wraps-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1">
+			<div class="slds-p-top_xx-large" style="float:left;margin-left:5%;">
+				<h3 class="slds-th__action">Способ доставки</h3> 
+				<div class="slds-p-top_medium slds-p-left_x-large">
+					<a onclick="{!c.selectOwn}" class="labelRadioButton">Самовывоз из магазина 0.00 руб</a>
+				</div>
+				<div class="slds-p-top_medium slds-p-left_x-large">
+					<a onclick="{!c.selectDeliveryMinsk}" class="labelRadioButton">Стоимость доставки по Минску 5.00 руб</a>
+				</div>
+				<div class="slds-p-top_xx-large">
+					<h3 class="slds-th__action">Способ оплаты</h3> 
+					<div class="slds-p-top_medium slds-p-left_x-large">
+						<ui:inputRadio aura:id="r0" labelClass="labelRadioButton" label="Оплата при доставке   " change="{!c.onGroup}" value="true"/>
+					</div>
+				</div>
+			</div>
+			<div id="respond" class="comment-respond slds-p-top_xx-large slds-p-left_x-large " style="float:right;margin-right:5%;">
+				<h3 class="slds-th__action">Покупатель</h3>
+				<div id="commentform" class="comment-form novalidate">
+					<div class="slds-grid slds-grid_pull-padded-medium slds-p-top_medium">
+						<div class="slds-col slds-p-horizontal_medium">
+							<span class="required">*</span>
+							<div style="color:gold" class="slds-p-bottom_x-small">Имя, Отчество</div>
+							<ui:inputText required="true" aura:id="name" class="inputComment" placeholder="Иван Иванович"/>
+							<span class="wpcf7-not-valid-tip validName">
+								<ui:outputText aura:id="outName" value="" class="text"/>
+							</span>
+						</div>
+						<div class="slds-col slds-p-horizontal_medium">
+							<span class="required">*</span>
+							<div style="color:gold" class="slds-p-bottom_x-small">Телефон</div>
+							<ui:inputPhone required="true" aura:id="phone" class="inputComment" placeholder="375295200992"/>
+							<span class="wpcf7-not-valid-tip validPhone">
+								<ui:outputText aura:id="outPhone" value="" class="text"/>
+							</span>
+						</div>
+						<div class="slds-col slds-p-horizontal_medium">
+							<span class="required">*</span>
+							<div style="color:gold" class="slds-p-bottom_x-small">E-mail</div>
+							<ui:inputEmail required="true" aura:id="email" class="inputComment" placeholder="Почта для оповещения"/>
+							<span class="wpcf7-not-valid-tip validEmail">
+								<ui:outputText aura:id="outEmail" value="" class="text"/>
+							</span>
+						</div>
+					</div>
+					<div class="slds-grid slds-grid_pull-padded-medium slds-p-top_medium slds-hide hideAddress">
+						<div class="slds-col slds-p-horizontal_medium">
+							<span class="required">*</span>
+							<div style="color:gold" class="slds-p-bottom_x-small">Адрес</div>
+							<ui:inputText required="true" aura:id="address" class="inputComment" placeholder="Ваш адрес"/>
+							<span class="wpcf7-not-valid-tip validAddress">
+								<ui:outputText aura:id="outAddress" value="" class="text"/>
+							</span>
+						</div>
+					</div>
+					<p class="comment-form-comment slds-p-top_medium">
+						<div style="color:gold" class="slds-p-bottom_x-small">Комментарий</div>
+						<ui:inputTextArea aura:id="comment" class="textArea" placeholder="Желаемое время доставки товара по Минску" rows="6"  cols="115" required="true"/>
+					</p>
+					<p class="form-submit slds-m-top_medium">
+						<lightning:button aura:id="submit" class="submitComment" label="Оформить заказ" onclick="{!c.sendEmail}" />
+					</p>
+				</div>
+			</div>
 		</div>
 	</div>
 

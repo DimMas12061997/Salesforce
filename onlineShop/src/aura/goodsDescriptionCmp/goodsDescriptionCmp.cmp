@@ -19,7 +19,7 @@
 			<br></br>
 			<span class="content">Производитель: {!v.currentGoods.Producer__c}</span>
 			<br></br><br></br>
-			<span class="contentPrice">Цена: {!v.currentGoods.UnitPrice__c} $</span> 
+			<span class="contentPrice">Цена: {!v.currentGoods.UnitPrice__c} р.</span> 
 			<br></br><br></br>
 			<div class="quantity-block-wrapper">
 				<a class="slds-text-link--reset" onclick="{!c.plusAmount}">	

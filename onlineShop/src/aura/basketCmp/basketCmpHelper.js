@@ -16,6 +16,14 @@
 			var state = response.getState();
 			if (state === "SUCCESS") {
 				component.set("v.order", response.getReturnValue()[0]);
+				if(response.getReturnValue()[0] != null) {
+					if (component.get("v.delivery") == 'Самовывоз из магазина 0.00 руб.') {
+						component.set("v.summaryCost", response.getReturnValue()[0].OrderCost__c);
+					}
+					else if (component.get("v.delivery") == 'Стоимость доставки по Минску 5.00 руб.') {
+						component.set("v.summaryCost", (response.getReturnValue()[0].OrderCost__c + 5));
+					}
+				}
 			}
 		});
 		$A.enqueueAction(action);    
@@ -75,6 +83,26 @@
 			else {
 				help.getGoodsInOrder(component);
 				help.getOrder(component);
+			}
+		});
+		$A.enqueueAction(action);	
+	},
+
+	buyGoods: function(component){
+		help = this;
+		var orderId =  component.get("v.order").Id;
+		var action = component.get("c.buyGoods");
+		action.setParams({
+			"orderId": orderId
+		});
+		action.setCallback(this, function(response){ 
+			var state = response.getState();
+			if (state === "SUCCESS") {
+				component.set("v.goods", response.getReturnValue()[0]);
+				// help.getGoodsInOrder(component);
+				component.set("v.order", null);
+				component.set("v.summaryCost", null);
+
 			}
 		});
 		$A.enqueueAction(action);	
